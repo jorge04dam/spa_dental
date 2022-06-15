@@ -1,0 +1,251 @@
+*{
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+}
+:root{
+    /* --cardTareas-bg-color:#eABE72; */
+    --cardTareas-bg-color: rgba(255,255,255,0.5);
+    --cardReportes-bg-color:#003a55;
+    --cardConsultas-bg-color:#ea72ea;
+    --cardAgregar-bg-color:#ea8472;
+    --cardInventario-bg-color:#72beeac5;
+    /* --background_image_url: url("img/principal.jpg") */
+}
+body{
+    /* background-color: #eABE72; */
+    /* background: linear-gradient(to top, #8ABE72, white); */
+    /* position: relative; */
+    /* width: 1500px;
+    height: 600px; */
+    /* background-image: url("../img/mandibula.jpg");
+    background-repeat: no-repeat; */
+    /* background-image: url("../img/mandibula.jpg"); */
+    /* min-height: 100vh; */
+    display: grid;
+    background: linear-gradient(rgba(39, 62, 121, 0.75),rgba(44, 79, 167, 0.75)),url("../img/sonrisa_feliz.jpg") 
+        no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+   
+}
+.mensaje_bienvenida{
+    margin-top: 80px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+}
+.welcome{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2,auto);
+    height: 400px;
+    margin-top: 70px;
+}
+.crear_usuario, .iniciar_sesion{
+    display: grid;
+    gap: 10px;
+    border-radius: 10px;
+    border: solid 1px;
+    background: linear-gradient(rgba(39, 62, 121, 0.75),rgba(44, 79, 167, 0.75));
+    color: white;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+}
+.crear_usuario:hover, .iniciar_sesion:hover{
+    background-color: #003a55;
+}
+.btn_crear, .btn_iniciar{
+    background-color: rgb(5, 153, 0);
+    color: #fff;
+}
+.btn_cancelar{
+    background-color: rgb(207, 23, 23);
+    color: #fff;
+}
+.btn_cancelar:hover{
+    background-color: rgb(255, 23, 23);
+    cursor: pointer;
+}
+.btn_crear:hover, .btn_iniciar:hover{
+    background-color: rgb(4, 219, 18);
+    cursor: pointer;
+}
+.menu_navegacion{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(8,auto);
+    /* margin-left: 30px; */
+    /* background: linear-gradient(to top, white, #8ABE72); */
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+h1{
+    text-align: center;
+    color:#fff
+}
+.header{
+    display: grid;
+    gap: 2px;
+    grid-template-columns: auto auto;
+}
+a{
+    /* display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto auto auto auto auto auto; */
+    text-decoration-style: none;
+    text-decoration-line: none;
+    color: white;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+a:hover{
+    color: #eABE72;
+}
+
+.img_logo{
+    width: 90px;
+    height: 90px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.container{
+    display: grid;
+    margin-top: 100px;
+    height: 900px;
+    /* gap: 10px; */
+    /* grid-template-columns: repeat(2, auto); */
+    /* height: 800px; */
+}
+.container_login{
+    display: grid;
+    height: 575px;
+}
+.form_login_usuario{
+    display: grid;
+    height: 200px;
+    margin-top: -200px;
+}
+.pendientes, .reportes, .consultas, .agregar, .inventario{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, auto);
+    height: 500px;
+}
+.cardTarea{
+    background-color: var(--cardTareas-bg-color);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    border: solid 1px;
+    border-radius: 25px;
+    height: 200px;
+}
+
+.cardReportes{
+    background-color: var(--cardReportes-bg-color);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.cardConsultas{
+    background-color: var(--cardConsultas-bg-color);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.cardAgregar{
+    background-color: var(--cardAgregar-bg-color);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.cardInventario{
+    background-color: var(--cardInventario-bg-color);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    
+}
+.add{
+    width: 85px;
+    position: fixed;
+    z-index: 100;
+    margin-top: 35%;
+    margin-left: 90%;
+    border-radius: 85px;
+    background-color: lightgray;
+
+}
+.add:hover{
+    background-color: lightcoral;
+
+}
+.add a img{
+    width: 75px;
+    /* margin-left: 50px; */
+    
+}
+
+.footer{
+    background-color: none;
+    display: grid;
+    gap: 10px;
+    align-items: flex-end;
+    justify-items: center;
+    color: white;
+}
+@media screen and (max-width:450px) {
+    .menu_navegacion{
+        grid-template-columns: repeat(1,auto);
+        overflow: hidden;
+        /* background: linear-gradient(to top, white, #8d0b32); */
+        
+    }
+    .container{
+        height: 1800px;
+        margin-top: 10px;
+    }
+    .pendientes, .reportes, .consultas, .agregar, .inventario{
+        margin-top: 100px;
+        grid-template-columns: repeat(1, auto);
+        height: 500px;
+    }
+    .add{
+        margin-left: 75%;
+        margin-top: 700px;
+    }
+}
+.containerReport{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+input{
+    display: grid;
+    width: 200px;
+    height: 35px;
+    border-radius: 50px;
+    justify-items: center;
+    text-align: center;
+    margin: 10px 0; 
+}
