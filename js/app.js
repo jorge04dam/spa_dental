@@ -66,3 +66,12 @@ let baseUsuarios = {
 	usuario: "",
 	contraseña: ""
 }
+
+let inicioSesion = () =>{
+	if (1===1){
+		// window.location.replace("login.html");
+		
+	}
+	return true;
+}
+console.log("inicioSesion()");
