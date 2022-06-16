@@ -5,10 +5,12 @@ let nombre 					= document.getElementById("name");
 let usuario 				= document.getElementById("name_user");
 let contraseña 				= document.getElementById("password");
 let confirmar_contraseña	= document.getElementById("confirm_password");
+let add 					= document.getElementById("add");
+let cerrar_sesion			= document.getElementById("usuario_sesion");
 
 let validarUsuario = (usuario, contraseña) => {
-	if(usuario.value == baseUsuarios.usuario && 
-		contraseña.value == baseUsuarios.contraseña){
+	if(usuario.value == credencialesUsuario.usuario && 
+		contraseña.value == credencialesUsuario.contraseña){
 		alert("Contraseña correcta, bienvenido");
 		window.location.replace("tareas.html");
 	}
@@ -45,6 +47,14 @@ btn_cancelar.addEventListener('click',function(){
 btn_creando.addEventListener('click',function(){
 	alert('creando usuario...');
 	crearUsuario();
+});
+
+add.addEventListener('click', function(){
+	let nombre_pendiente = prompt("Nombre del pendiente");
+});
+
+cerrar_sesion.addEventListener('click', function(){
+	alert("Cerrando sesion");
 });
 
 let credencialesUsuario = {
