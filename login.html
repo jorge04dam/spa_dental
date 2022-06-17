@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container_login">
-      <h1>Iniciar sesión</h1>
+      <h1 class= "mensaje_bienvenida">Iniciar sesión</h1>
     <form action="" class="form_login_usuario">
         <!-- <label for="name"></label>
         <input type="text" id="name" placeholder="Nombre"> -->
@@ -23,9 +23,13 @@
         <input type="password" id="confirm_password" placeholder="Confirmar Contraseña"> -->
         <input type="button" value="Cancelar" class="btn_cancelar" id="btn_cancel">
         <input type="button" value="Iniciar sesion" class="btn_crear" id="btn_ini">
+        <input type="button" value="Registrarse" class="btn_iniciar" id="registrar">
+        <a href="recuperar_contraseña.php" class="olvido_contraseña">Olvido su contraseña</a>
         <input type="hidden" name="" id="btn_creando">
         <input type="hidden" name="" id="add">
         <input type="hidden" name="" id="usuario_sesion">
+        <input type="hidden" name="" id="recuperar">
+        <!-- <input type="hidden" name="" id="registrarse"> -->
         <!-- <button type="submit">Cancelar</button>
         <button type="submit">Crear</button> -->
     </form>

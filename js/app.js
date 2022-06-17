@@ -7,6 +7,8 @@ let contraseña 				= document.getElementById("password");
 let confirmar_contraseña	= document.getElementById("confirm_password");
 let add 					= document.getElementById("add");
 let cerrar_sesion			= document.getElementById("usuario_sesion");
+let registrar				= document.getElementById("registrar");
+let recuperar				= document.getElementById("recuperar");
 
 let validarUsuario = (usuario, contraseña) => {
 	if(usuario.value == credencialesUsuario.usuario && 
@@ -21,6 +23,12 @@ let validarUsuario = (usuario, contraseña) => {
 
 }
 
+let recuperarContraseña =() =>{
+	if(1 == 1){
+		alert("la contraseña es:");
+		window.location.replace("login.html");
+	}
+}
 let crearUsuario = () => {
 	if(contraseña.value == confirmar_contraseña.value){
 		alert("las contraseñas coinciden");
@@ -41,7 +49,7 @@ iniciarSesion.addEventListener('click',function(){
 
 btn_cancelar.addEventListener('click',function(){
 	alert('cancelando...');
-	window.location.replace("index.html");
+	window.location.replace("index.php");
 });
 
 btn_creando.addEventListener('click',function(){
@@ -57,6 +65,14 @@ cerrar_sesion.addEventListener('click', function(){
 	alert("Cerrando sesion");
 });
 
+registrar.addEventListener('click', function(){
+	window.location.replace("crear_usuario.html")
+});
+
+recuperar.addEventListener('click', function(){
+	recuperarContraseña();
+});
+
 let credencialesUsuario = {
 	usuario: 'jorge04dam',
 	contraseña: 'password'
@@ -70,8 +86,8 @@ let baseUsuarios = {
 let inicioSesion = () =>{
 	if (1===1){
 		// window.location.replace("login.html");
-		
+		return true;
 	}
-	return true;
 }
-console.log("inicioSesion()");
+
+console.log(inicioSesion());
