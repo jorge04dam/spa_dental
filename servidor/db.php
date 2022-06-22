@@ -3,6 +3,19 @@ $servername = "localhost";
 $database = "spa_dental_lindavista";
 $username = "root";
 $password = "";
+
+// isset($_POST('name_user')){
+//     echo 'campos completos';
+//     var_dump ('hola');
+// }
+// $nom    =   $_POST["name_user"];
+// $pass   =   $_POST['password'];
+$a = "prueba";
+$b = "otraprueba";
+
+var_dump(isset($a));      // TRUE
+var_dump(isset($a, $b)); // TRUE
+// var_dump(isset($_POST('name_user')));
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
@@ -20,16 +33,23 @@ $datos= mysqli_query($conn, $consulta);
 // $result = mysqli_query($nombreConexion, "Consulta aquí"); ó mysqli_query($nombreConexion, $query);
 
 // 4) Ir Imprimiendo las filas resultantes
+
+
+
+
 while ($fila =mysqli_fetch_array($datos)){
-    echo "<p>";
-    echo $fila ["id"];
-    echo "-"; // un separador
-    echo $fila["name"];
-    echo "-"; // un separador
-    echo $fila ["nickname"];
-    echo "-"; // un separador
-    echo $fila["password"];
-    echo "</p>";
+    if($nom == $fila["nickname"] && $pass == $fila["password"] ){
+        echo "<p>";
+        echo $fila ["id"];
+        echo "-"; // un separador
+        echo $fila["name"];
+        echo "-"; // un separador
+        echo $fila ["nickname"];
+        echo "-"; // un separador
+        echo $fila["password"];
+        echo "</p>";
+    }
+
     }
     // else{
     // echo "<p> MySQL no conoce ese usuario y password</p>";

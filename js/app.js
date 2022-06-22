@@ -14,11 +14,19 @@ const estilosenProceso		= document.getElementById("cardenProceso");
 const estilosRealizado		= document.getElementById("cardRealizado");
 const estilos 				= document.getElementById("cardTareas");
 
+
 let validarUsuario = (usuario, contraseña) => {
 	if(usuario.value == credencialesUsuario.usuario && 
 		contraseña.value == credencialesUsuario.contraseña){
-		alert("Contraseña correcta, bienvenido");
-		window.location.replace("tareas.html");
+			if(credencialesUsuario.inicioSesion == false){
+				alert("Bienvenido, contraseña correcta");
+				credencialesUsuario.inicioSesion = true;
+				// window.location.replace("tareas.html");	
+			}else{
+				alert("El usuario ya ha iniciado sesion");
+			}
+			
+
 	}
 	else
 	{
@@ -46,10 +54,10 @@ let crearUsuario = () => {
 	}
 }
 
-iniciarSesion.addEventListener('click',function(){
-	alert('verificando credenciales');
-	validarUsuario(usuario, contraseña);
-	});
+// iniciarSesion.addEventListener('click',function(){
+// 	alert('verificando credenciales');
+// 	validarUsuario(usuario, contraseña);
+// 	});
 
 btn_cancelar.addEventListener('click',function(){
 	alert('cancelando...');
@@ -79,7 +87,8 @@ recuperar.addEventListener('click', function(){
 
 let credencialesUsuario = {
 	usuario: 'jorge04dam',
-	contraseña: 'password'
+	contraseña: 'password',
+	inicioSesion: false
 }
 
 let baseUsuarios = {
@@ -104,5 +113,40 @@ let estado = {
 }
 
 if(estado.pendiente == true){
-	cardRealizado
+	// cardRealizado
 }
+
+$('#btn_ini').click(function(){
+	$.post('servidor/db.php',{
+		nombre: 	$('#name_user').val(),
+		contraseña:	$('#password').val()
+	},
+	function(info, estado){
+		div  =	document.getElementById('resultado');
+		div.style.display	= 	'';
+		$('#resultado').html(info);
+		// $('#resultado').html(estado);
+		console.log(info, '<hr>', estado);
+	})
+
+	console.log('hola desde ajax 2');
+});
+
+
+// $('#Enviar').click(function(){
+
+// 	$.post('conexion.php',
+// 	{
+// 		nombre:$('#nombre').val(),
+// 		correo:$('#correo').val(),
+// 		tel:$('#tel').val(),
+// 		direccion:$('#direccion').val(),
+// 	},
+// 	function(info,estado){
+
+// 		 div = document.getElementById('resultado');
+//             div.style.display = '';
+// 		$('#resultado').html(info);
+
+// 		});
+// });
