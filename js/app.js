@@ -115,8 +115,9 @@ let estado = {
 if(estado.pendiente == true){
 	// cardRealizado
 }
-
+$('#cargando').hide();
 $('#btn_ini').click(function(){
+	$('#cargando').show();
 	$.post('servidor/db.php',{
 		nombre: 	$('#name_user').val(),
 		contraseña:	$('#password').val()
@@ -124,15 +125,54 @@ $('#btn_ini').click(function(){
 	function(info, estado){
 		div  =	document.getElementById('resultado');
 		div.style.display	= 	'';
-		$('#resultado').html(info);
-		// $('#resultado').html(estado);
-		console.log(info, '<hr>', estado);
+		setTimeout(iniSesion(),3000000)
+
+		function iniSesion(){
+			setTimeout($('#cargando').hide(), 300000);
+			// $('#cargando').hide();
+			
+			
+			console.log(info);
+	
+	
+			setTimeout(validar(), 5000000);
+			function validar(){
+				if(info == "true"){
+				
+					window.location.replace('tareas.html');
+					
+				}else{
+					$('#resultado').html("El usuario o contraseña es incorrecta, intente otra vez");
+					// alert("Usuario o contraseña incorrecta");
+				}
+			}
+			
+		}
+	
 	})
 
-	console.log('hola desde ajax 2');
+	// console.log('hola desde ajax 2');
 });
+$('#btn_creando').click(function(){
+	$.post('servidor/db.php',{
+		nombre: 	$('#name_user').val(),
+		contraseña:	$('#password').val()
+	})
+});
+setTimeout(saludo(),100000);
 
+function saludo(){
+	console.log("hola.");
+}
+let identificadorTiempoDeEspera;
 
+function temporizadorDeRetraso() {
+  identificadorTiempoDeEspera = setTimeout(funcionConRetraso, 3000);
+}
+
+function funcionConRetraso() {
+  alert("Han pasado 3 segundos.");
+}
 // $('#Enviar').click(function(){
 
 // 	$.post('conexion.php',

@@ -5,8 +5,11 @@ include_once 'db.php';
 // $user='postgres';
 // $pass='1234';
 
-$nom=$_POST['name_user'];
-$pass=$_POST['password'];
+if(!$_POST){
+    echo "los campos estan vacios";
+}
+
+echo "los campos estas completos";
 
 
 // $conexion=pg_connect("host=$host dbname=$bd user=$user password=$pass");
