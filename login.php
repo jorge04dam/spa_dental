@@ -13,27 +13,25 @@
     <div class="container_login">
       <h1 class= "mensaje_bienvenida">Iniciar sesión</h1>
     <form action="servidor/db.php" class="form_login_usuario" method="POST">
-        <!-- <label for="name"></label>
-        <input type="text" id="name" placeholder="Nombre"> -->
+
         <label for="name_user"></label>
         <input type="text" id="name_user" placeholder="Nombre de usuario">
+
         <label for="password"></label>
         <input type="password" id="password" placeholder="Contraseña">
-        <!-- <label for="confirm_password"></label>
-        <input type="password" id="confirm_password" placeholder="Confirmar Contraseña"> -->
+
         <input type="button" value="Cancelar" class="btn_cancelar" id="btn_cancel">
         <input type="button" value="Iniciar sesion" class="btn_crear" id="btn_ini">
         <input type="button" value="Registrarse" class="btn_iniciar" id="registrar">
         <a href="recuperar_contraseña.php" class="olvido_contraseña">Olvido su contraseña</a>
+        
+        <div id="cargando"><img src="img/pulso.gif" alt=""></div>
+        <div id="resultado">
+
         <input type="hidden" name="" id="btn_creando">
         <input type="hidden" name="" id="add">
         <input type="hidden" name="" id="usuario_sesion">
         <input type="hidden" name="" id="recuperar">
-        <div id="cargando"><img src="img/pulso.gif" alt=""></div>
-        <!-- <input type="hidden" name="" id="registrarse"> -->
-        <!-- <button type="submit">Cancelar</button>
-        <button type="submit">Crear</button> -->
-        <div id="resultado">
             
         </div>
     </form>
@@ -44,7 +42,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/prueba.js"></script>
+
 
     
 </body>

@@ -124,34 +124,18 @@ $('#btn_ini').click(function(){
 	},
 	function(info, estado){
 		div  =	document.getElementById('resultado');
-		div.style.display	= 	'';
-		setTimeout(iniSesion(),3000000)
+		div.style.display	= 	'';		
+		// $('#cargando').hide();
+		console.log(info);
 
-		function iniSesion(){
-			setTimeout($('#cargando').hide(), 300000);
-			// $('#cargando').hide();
 			
-			
-			console.log(info);
-	
-	
-			setTimeout(validar(), 5000000);
-			function validar(){
 				if(info == "true"){
-				
 					window.location.replace('tareas.html');
-					
 				}else{
 					$('#resultado').html("El usuario o contraseña es incorrecta, intente otra vez");
 					// alert("Usuario o contraseña incorrecta");
 				}
-			}
-			
-		}
-	
 	})
-
-	// console.log('hola desde ajax 2');
 });
 $('#btn_creando').click(function(){
 	$.post('servidor/db.php',{
@@ -159,20 +143,9 @@ $('#btn_creando').click(function(){
 		contraseña:	$('#password').val()
 	})
 });
-setTimeout(saludo(),100000);
 
-function saludo(){
-	console.log("hola.");
-}
-let identificadorTiempoDeEspera;
 
-function temporizadorDeRetraso() {
-  identificadorTiempoDeEspera = setTimeout(funcionConRetraso, 3000);
-}
 
-function funcionConRetraso() {
-  alert("Han pasado 3 segundos.");
-}
 // $('#Enviar').click(function(){
 
 // 	$.post('conexion.php',

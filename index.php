@@ -19,10 +19,10 @@
     <div class="welcome">
         
         <div class="crear_usuario">
-            <a href="crear_usuario.html"><p>Crear Usuario</p></a>
+            <a href="crear_usuario.php"><p>Crear Usuario</p></a>
         </div>
         <div class="iniciar_sesion">
-            <a href="login.html"><p>Iniciar Sesion</p></a>
+            <a href="login.php"><p>Iniciar Sesion</p></a>
         </div>
     </div>
    
