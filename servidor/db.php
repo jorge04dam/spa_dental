@@ -37,15 +37,17 @@ if($_POST){
     // var_dump($_POST);
     $nom    =  $_POST["nombre"];
     $pass   =  $_POST["contraseña"];
-    $estado = "false";
+    $estado = "sesion_no_iniciada";
     
-    $consulta = "SELECT `nickname`,`password` FROM `login` WHERE `nickname` = '$nom'";
+    $consulta = "SELECT `nickname`,`password`,`status`  FROM `login` WHERE `nickname` = '$nom'";
 
     mysqli_select_db($conn, $database);
     $datos= mysqli_query($conn, $consulta);
-
+    // echo $datos;
+    
     while ($fila = mysqli_fetch_array($datos)){
-        if($nom == $fila["nickname"] && $pass == $fila["password"] ){
+        
+        if($nom == $fila["nickname"] && $pass == $fila["password"]){
             
             // echo "<p>";
             // echo $fila ["id"];
@@ -57,17 +59,44 @@ if($_POST){
             // echo $fila["password"];
             // echo "</p>";
             // echo "los datos son correctos";
-           $estado = "true";
-           echo $estado;
-        }else{
-            // echo "los datos no son correctos";
+              
+           if($fila["status"] == 0){
+                
+                $actualizar = "UPDATE `login` SET `status`='1' WHERE `nickname`= '$nom'";
+                mysqli_query($conn, $actualizar);
+                $estado = "iniciando_sesion";
+                echo $estado;
+           }else{
+            $estado = "sesion_iniciada";
             echo $estado;
+           }
+        }else{
+            echo $estado;  
         }
     
-        }
+    }
+    if($fila == NULL){
+        // echo "null";
+    }
 
+    // function crearUsuario(){
+    //     if($_POST){
+    
+    //         $name               = $_POST['name'];
+    //         $nickname           = $_POST['nickname'];
+    //         $password           = $_POST['password'];
+            
+    //         $insertar = "INSERT INTO `login`( `name`, `nickname`, `password`, `status`) 
+    //                     VALUES ('$name','$nickname','$password','$confpass', 0)";
+    
+    //         $insercion = mysqli_query($conn, $insertar);
+    //         echo $insercion;
+    //     }
+        
+    // }
 
-    // echo "nombre de usuario es $nom y la contraseña es $pass";
+    
+
 }else{
     header('Location: http://127.0.0.1/spa_dental/index.php');
 }
@@ -82,5 +111,8 @@ if($_POST){
     // }
 
 // mysqli_close($conn);
+
+//funcion para crear un usuario
+
 
 ?>

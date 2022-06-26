@@ -1,30 +1,52 @@
 <?php
-include_once 'db.php';
-// $host='localhost';
-// $bd='empresa';
-// $user='postgres';
-// $pass='1234';
+$servername = "localhost";
+$database = "spa_dental_lindavista";
+$username = "root";
+$password = "";
 
-if(!$_POST){
-    echo "los campos estan vacios";
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "los campos estas completos";
+if($_POST){
 
+    mysqli_select_db($conn, $database);
+   
+    
 
-// $conexion=pg_connect("host=$host dbname=$bd user=$user password=$pass");
+    $name               = $_POST['name'];
+    $nickname           = $_POST['nickname'];
+    $password           = $_POST['password'];
+            
+    $insertar = "INSERT INTO `login`( `name`, `nickname`, `password`, `status`) 
+                VALUES ('$name','$nickname','$password', 0)";
+    
+    $insercion = mysqli_query($conn, $insertar);
+    echo "success";
 
-// $query=("INSERT INTO clientes(nombre,correo,telefono,direccion)
-// 	VALUES('$_REQUEST[nombre]','$_REQUEST[correo]',
-// 	'$_REQUEST[tel]','$_REQUEST[direccion]')");
+    // function crearUsuario(){
+    //     if($_POST){
+    
+    //         $name               = $_POST['name'];
+    //         $nickname           = $_POST['nickname'];
+    //         $password           = $_POST['password'];
+            
+    //         $insertar = "INSERT INTO `login`( `name`, `nickname`, `password`, `status`) 
+    //                     VALUES ('$name','$nickname','$password','$confpass', 0)";
+    
+    //         $insercion = mysqli_query($conn, $insertar);
+    //         echo $insercion;
+    //     }
+        
+    // }
 
-// $consulta=pg_query($conexion,$query);
-// pg_close();
+    
 
-
-// echo "Estos datos fueron almacenados en la base de datos: <br> Nombre:".$nom."<br>"."Correo: ".$email.
-// "<br> Teléfono: ".$tel."<br> Dirección: ".$direc;
-
-
+}else{
+    header('Location: http://127.0.0.1/spa_dental/index.php');
+}
 
 ?>
