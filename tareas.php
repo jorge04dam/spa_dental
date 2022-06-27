@@ -1,36 +1,14 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spa Dental Linda Vista</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="img" href="/">
-</head>
-<body>
-    
-    
-    <div class="menu_navegacion">
-        <a href="#"><img src="img/logo-150x150.png" class="img_logo" alt=""></a>
-        <a href="tareas.html">Tablero de pendientes</a>
-        <a href="reportes.html">Reportes</a>
-        <a href="login.html">Consultas</a>
-        <a href="#agregar">Agregar</a>
-        <a href="#inventario">Inventario</a>
-        <a href="login.html" id="usuario_sesion">Cerrar Sesion</a>
-        <a href="#ayuda">Ayuda</a>
-        <input type="hidden" name="" id="registrarse">
-        
-    </div>
-    <div class="header">
-        
+<?php include 'header.php'; ?>        
         <!-- <a href="#"><img src="img/logo-150x150.png" class="img_logo2" alt=""></a> -->
         <!-- <h1>Spa Dental Linda Vista</h1> -->
-        </div>
+        <!-- </div> -->
+    <?php 
+    if(!$_POST){
+        header('Location: http://127.0.0.1/spa_dental/login.php');
+    }
+    ?>
     <div class="container">
-        <!-- <img src="img/mandibula.jpg" alt="" width="100%"> -->
+        
         <div class="pendientes" id="tareas">
             <div class="cardTarea" id="cardRealizado cardTareas">Seguimiento a</div>
             <div class="cardTarea" id="cardRealizado cardTareas">Tarea 2</div>
@@ -40,7 +18,7 @@
             <div class="cardTarea" id="cardenProceso cardTareas">Tarea 2</div>
             <div class="cardTarea" id="cardPendiente cardTareas">Tarea 3</div>
             <div class="cardTarea" id="cardPendiente cardTareas">Tarea 4</div>
-            <!-- <div class="cardTarea">Tarea 5</div> -->
+           
         </div>
         <hr>
         
@@ -49,10 +27,6 @@
     <div class="add">
         <img src="img/agregar1.png" alt="add-taks" >
     </div>
-    <div class="footer">
-        <p>Todos los derechos reservado ®Spa Dental Linda Vista ®2022</p>
-    </div>
+    <?php include 'library.php'; ?>
    <script src="js/app.js"></script>
-   
-</body>
-</html>
+   <?php include 'footer.php'; ?>

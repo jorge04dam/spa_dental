@@ -1,5 +1,4 @@
-
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +12,7 @@
     <div class="container_login">
       <h1 class= "mensaje_bienvenida">Iniciar sesión</h1>
     <form action="servidor/db.php" class="form_login_usuario" method="POST">
-
+        <div id="form">
         <label for="name_user"></label>
         <input type="text" id="name_user" placeholder="Nombre de usuario">
 
@@ -24,7 +23,7 @@
         <input type="button" value="Iniciar sesion" class="btn_crear" id="btn_ini">
         <input type="button" value="Registrarse" class="btn_iniciar" id="registrar">
         <a href="recuperar_contraseña.php" class="olvido_contraseña">Olvido su contraseña</a>
-        
+        </div>
         <div id="cargando"><img src="img/pulso.gif" alt=""></div>
         <div id="resultado">
 
@@ -40,7 +39,7 @@
     <footer class="footer">
         <p>Todos los derechos reservado ®Spa Dental Linda Vista ®2022</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <?php include 'library.php';?>
     <script type="text/javascript" src="js/app.js"></script>
 
 

@@ -1,165 +1,122 @@
-const iniciarSesion 		= document.getElementById("btn_ini");
-const btn_cancelar 			= document.getElementById("btn_cancel");
-const btn_creando			= document.getElementById("btn_creando");
-const nombre 				= document.getElementById("name");
-const usuario 				= document.getElementById("name_user");
-const contraseña 			= document.getElementById("password");
-const confirmar_contraseña	= document.getElementById("confirm_password");
-const add 					= document.getElementById("add");
-const cerrar_sesion			= document.getElementById("usuario_sesion");
-const registrar				= document.getElementById("registrar");
-const recuperar				= document.getElementById("recuperar");
-const estilosPendiente		= document.getElementById("cardPendiente");
-const estilosenProceso		= document.getElementById("cardenProceso");
-const estilosRealizado		= document.getElementById("cardRealizado");
-const estilos 				= document.getElementById("cardTareas");
-
-
-let validarUsuario = (usuario, contraseña) => {
-	if(usuario.value == credencialesUsuario.usuario && 
-		contraseña.value == credencialesUsuario.contraseña){
-			if(credencialesUsuario.inicioSesion == false){
-				alert("Bienvenido, contraseña correcta");
-				credencialesUsuario.inicioSesion = true;
-				// window.location.replace("tareas.html");	
-			}else{
-				alert("El usuario ya ha iniciado sesion");
-			}
-			
-
-	}
-	else
-	{
-		alert("usuario o contraseña incorrecta");
-	}
-
-}
-
-let recuperarContraseña =() =>{
-	if(1 == 1){
-		alert("la contraseña es:");
-		window.location.replace("login.html");
-	}
-}
-let crearUsuario = () => {
-	if(contraseña.value == confirmar_contraseña.value){
-		alert("las contraseñas coinciden");
-		baseUsuarios.usuario 	= usuario.value;
-		baseUsuarios.contraseña = contraseña.value;
-		window.location.replace("login.html");
-
-	}
-	else{
-		alert("las contraseñas no coinciden");
-	}
-}
-
-// iniciarSesion.addEventListener('click',function(){
-// 	alert('verificando credenciales');
-// 	validarUsuario(usuario, contraseña);
-// 	});
-
-btn_cancelar.addEventListener('click',function(){
-	alert('cancelando...');
-	window.location.replace("index.php");
-});
-
-btn_creando.addEventListener('click',function(){
-	alert('creando usuario...');
-	crearUsuario();
-});
-
-add.addEventListener('click', function(){
-	let nombre_pendiente = prompt("Nombre del pendiente");
-});
-
-cerrar_sesion.addEventListener('click', function(){
-	alert("Cerrando sesion");
-});
-
-registrar.addEventListener('click', function(){
-	window.location.replace("crear_usuario.html")
-});
-
-recuperar.addEventListener('click', function(){
-	recuperarContraseña();
-});
-
-let credencialesUsuario = {
-	usuario: 'jorge04dam',
-	contraseña: 'password',
-	inicioSesion: false
-}
-
-let baseUsuarios = {
-	usuario: "",
-	contraseña: ""
-}
-
-// let inicioSesion = () =>{
-// 	if (1===1){
-// 		// window.location.replace("login.html");
-// 		return true;
-// 	}
-// }
-
-// console.log(inicioSesion());
-
-// definir el estado de cada tarea en el tablero de pendientes
-let estado = {
-	pendiente: true,
-	enProceso: false,
-	realizado: false
-}
-
-if(estado.pendiente == true){
-	// cardRealizado
-}
+// Elementos ocultos
 $('#cargando').hide();
+
+// Eventos 
 $('#btn_ini').click(function(){
+    $('#cargando').show();
+    $('#resultado').html("Iniciando sesion...");
+	$('#form').hide();	
+
+    setTimeout(() => {
+        $.post('servidor/db.php',{
+            nombre: 	$('#name_user').val(),
+            contraseña:	$('#password').val()
+        },
+        function(info, estado){
+            div  =	document.getElementById('resultado');
+            div.style.display = '';		
+            
+            console.log(info);
+            if(info == "iniciando_sesion"){
+                window.location.replace('tareas.php');
+            }
+            else if(info == "sesion_iniciada"){
+                alert("el usuario ya ha iniciado sesion");
+            }
+            else if(info == "sesion_no_iniciada" || info == "null"){
+                $('#resultado').html("Error: Usuario o contraseña incorrecta. Intente otra vez.");
+               
+                setTimeout(() => {
+                    $('#resultado').html("");
+                }, 5000);        
+            }
+        })
+        $('#resultado').html("");
+        $('#cargando').hide();
+		$('#form').show();
+    }, 5000);
+    
+});
+
+$('#btn_cancel').click(function(){
+    $('#cargando').show();
+    div  =	document.getElementById('resultado');
+    div.style.display = ' ';
+    $('#resultado').html("Cancelando...");
+    setTimeout(() => {
+        $('#cargando').hide();
+        $('#resultado').html("");
+        window.location.replace("login.php");
+    }, 3000);
+});
+ $('#registrar').click(function(){
+    window.location.replace("crear_usuario.php");
+    console.log("boton registrar");
+ });
+
+ $('#btn_creando').click(function(){
+    //al dar click en boton registrar
+    $('#cargando').show();
+	$('#form').hide();	
+    div  =	document.getElementById('resultado');
+    div.style.display = ' ';
+    $('#resultado').html("Creando usuario...");
+
+    //Validando campos completos
+    if($('#name').val()!=="" &&
+        $('#name_user').val()!=="" &&
+        $('#password').val()!=="" &&
+        $('#confirm_password').val()!==""){
+            
+        //validando contraseñas iguales
+        if($('#password').val() == $('#confirm_password').val()){
+            $('#resultado').html("Las contraseñas coinciden");
+
+            $.post('servidor/envio.php',{
+                name:       $('#name').val(),
+                nickname:   $('#name_user').val(),
+                password:   $('#password').val(),
+                
+            },function(info, estado){
+                if(info == "success"){
+                    $('#resultado').html("El usuario se creo exitosamente");
+                    setTimeout(() => {
+                        window.location.replace("pruebas/prueba.php");
+                    }, 3000);
+                }
+                else{
+                    $('#resultado').html("Error: no se pudo crear el usuario. Intente otra vez");
+                }
+            })
+
+        }
+        else{
+            $('#resultado').html("Las contraseñas no coinciden");
+        }
+
+    }else{
+        $('#resultado').html("Por favor, llene todos los campos.");
+    }
+    //retardo
+    setTimeout(() => {
+        $('#resultado').html("");
+        $('#cargando').hide();
+		$('#form').show();	
+    }, 4000);
+ });
+
+ $('#recuperar').click(function(){
 	$('#cargando').show();
-	$.post('servidor/db.php',{
-		nombre: 	$('#name_user').val(),
-		contraseña:	$('#password').val()
-	},
-	function(info, estado){
-		div  =	document.getElementById('resultado');
-		div.style.display	= 	'';		
-		// $('#cargando').hide();
-		console.log(info);
+	$('#resultado').html("Cargado....")
+	setTimeout(() => {
+		$.post('email/mail.php',{
+			name: 	$('#name_user').val(),
+			email:	$('#keyword').val()
+		},function(info,estado){
+			console.log(info);
+		})
 
-			
-				if(info == "true"){
-					window.location.replace('tareas.html');
-				}else{
-					$('#resultado').html("El usuario o contraseña es incorrecta, intente otra vez");
-					// alert("Usuario o contraseña incorrecta");
-				}
-	})
-});
-$('#btn_creando').click(function(){
-	$.post('servidor/db.php',{
-		nombre: 	$('#name_user').val(),
-		contraseña:	$('#password').val()
-	})
-});
-
-
-
-// $('#Enviar').click(function(){
-
-// 	$.post('conexion.php',
-// 	{
-// 		nombre:$('#nombre').val(),
-// 		correo:$('#correo').val(),
-// 		tel:$('#tel').val(),
-// 		direccion:$('#direccion').val(),
-// 	},
-// 	function(info,estado){
-
-// 		 div = document.getElementById('resultado');
-//             div.style.display = '';
-// 		$('#resultado').html(info);
-
-// 		});
-// });
+		$('#cargando').hide();
+		$('#resultado').html("")
+	}, 3000);
+ });
