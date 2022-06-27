@@ -1,33 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spa Dental Linda Vista</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="img" href="/">
-</head>
-<body>
+<?php
+    include 'header.php';
+?>
+<div class="container">
     
-    
-    <div class="menu_navegacion">
-        <a href="#"><img src="img/logo-150x150.png" class="img_logo" alt=""></a>
-        <a href="tareas.html">Tablero de pendientes</a>
-        <a href="reportes.html">Reportes</a>
-        <a href="login.html">Consultas</a>
-        <a href="#agregar">Agregar</a>
-        <a href="#inventario">Inventario</a>
-        <a href="index.php" id="usuario_sesion">Cerrar Sesion</a>
-        <a href="#ayuda">Ayuda</a>
-        <input type="hidden" name="" id="registrarse">
-        
-    </div>
-    <div class="header">
-        
-        <!-- <a href="#"><img src="img/logo-150x150.png" class="img_logo2" alt=""></a> -->
-        <!-- <h1>Spa Dental Linda Vista</h1> -->
-        </div>
+</div>
+
     <div class="containerReport">
         
         
@@ -64,7 +41,11 @@
     <div class="footer">
         <p>Todos los derechos reservado ®Spa Dental Linda Vista ®2022</p>
     </div>
-   
+        
+    <?php
+        include 'footer.php';
+
+    ?>
    
 </body>
 </html>
