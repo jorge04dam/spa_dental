@@ -18,7 +18,7 @@ $('#btn_ini').click(function(){
             
             console.log(info);
             if(info == "iniciando_sesion"){
-                window.location.replace('tareas.php');
+                window.location.replace('bienvenida.php');
             }
             else if(info == "sesion_iniciada"){
                 alert("el usuario ya ha iniciado sesion");
