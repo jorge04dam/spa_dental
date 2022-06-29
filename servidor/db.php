@@ -16,8 +16,12 @@ if($_POST){
     $nom    =  $_POST["nombre"];
     $pass   =  $_POST["contraseña"];
     $estado = "sesion_no_iniciada";
+    if(!empty($_POST)){
+        echo 'estan vacios';
+        
+    }
     
-    $consulta = "SELECT `nickname`,`password`,`status`  FROM `login` WHERE `nickname` = '$nom'";
+    $consulta = "SELECT `nickname`,`password`,`status`,`cargo_id`  FROM `login` WHERE `nickname` = '$nom'";
 
     mysqli_select_db($conn, $database);
     $datos= mysqli_query($conn, $consulta);
@@ -39,11 +43,21 @@ if($_POST){
             // echo "los datos son correctos";
               
            if($fila["status"] == 0){
+                if($fila["cargo_id"] == 1){
+                    $actualizar = "UPDATE `login` SET `status`='1' WHERE `nickname`= '$nom'";
+                    mysqli_query($conn, $actualizar);
+                    $estado = "iniciando_sesion_admin";
+                    echo $estado;
+                }elseif ($fila["cargo_id"] == 2) {
+                    $actualizar = "UPDATE `login` SET `status`='1' WHERE `nickname`= '$nom'";
+                    mysqli_query($conn, $actualizar);
+                    $estado = "iniciando_sesion_recep";
+                    echo $estado;
+                }else {
+                    echo "el cargo no existe";
+                }
                 
-                $actualizar = "UPDATE `login` SET `status`='1' WHERE `nickname`= '$nom'";
-                mysqli_query($conn, $actualizar);
-                $estado = "iniciando_sesion";
-                echo $estado;
+                
            }else{
             $estado = "sesion_iniciada";
             echo $estado;

@@ -1,9 +1,11 @@
 // Elementos ocultos
 $('#cargando').hide();
+$('#resultado').hide();
 
 // Eventos 
 $('#btn_ini').click(function(){
     $('#cargando').show();
+    $('#resultado').show();
     $('#resultado').html("Iniciando sesion...");
 	$('#form').hide();	
 
@@ -17,24 +19,30 @@ $('#btn_ini').click(function(){
             div.style.display = '';		
             
             console.log(info);
-            if(info == "iniciando_sesion"){
-                window.location.replace('bienvenida.php');
+            if(info == "iniciando_sesion_admin"){
+                window.location.replace('Bienvenida_admin.php');
+
+               
+            }else if(info == "iniciando_sesion_recep"){
+                window.location.replace('Bienvenida_recepcion.php');
+               
             }
             else if(info == "sesion_iniciada"){
                 alert("el usuario ya ha iniciado sesion");
             }
-            else if(info == "sesion_no_iniciada" || info == "null"){
-                $('#resultado').html("Error: Usuario o contraseña incorrecta. Intente otra vez.");
+            else if(info == "estan vacios"){
+                $('#resultado').html("Error: Los campos estan vacios.");
                
                 setTimeout(() => {
                     $('#resultado').html("");
-                }, 5000);        
+                    $('#resultado').hide();
+                }, 3000);        
             }
         })
-        $('#resultado').html("");
+        $('#resultado').hide();
         $('#cargando').hide();
 		$('#form').show();
-    }, 5000);
+    }, 3000);
     
 });
 
