@@ -5,45 +5,97 @@ $('#resultado').hide();
 // Eventos 
 $('#btn_ini').click(function(){
     $('#cargando').show();
-    $('#resultado').show();
-    $('#resultado').html("Iniciando sesion...");
-	$('#form').hide();	
-
-    setTimeout(() => {
-        $.post('servidor/db.php',{
-            nombre: 	$('#name_user').val(),
-            contraseña:	$('#password').val()
-        },
-        function(info, estado){
-            div  =	document.getElementById('resultado');
-            div.style.display = '';		
-            
-            console.log(info);
-            if(info == "iniciando_sesion_admin"){
-                window.location.replace('Bienvenida_admin.php');
-
-               
-            }else if(info == "iniciando_sesion_recep"){
-                window.location.replace('Bienvenida_recepcion.php');
-               
-            }
-            else if(info == "sesion_iniciada"){
-                alert("el usuario ya ha iniciado sesion");
-            }
-            else if(info == "estan vacios"){
-                $('#resultado').html("Error: Los campos estan vacios.");
-               
-                setTimeout(() => {
-                    $('#resultado').html("");
-                    $('#resultado').hide();
-                }, 3000);        
-            }
-        })
-        $('#resultado').hide();
-        $('#cargando').hide();
-		$('#form').show();
-    }, 3000);
+    $('#con_resp').html("");
+    $('#con_resp').append("<div id='resultado_ok'></div>");
+ 
+    $('#resultado_ok').html("Iniciando sesion...");
+	$('#form').hide();
     
+    setTimeout(() => {
+        // $.post('servidor/db.php',{
+        //     nombre: 	$('#name_user').val(),
+        //     contraseña:	$('#password').val()
+        // },
+        // function(info, estado){
+        //     div  =	document.getElementById('resultado');
+        //     div.style.display = '';		
+            
+        //     console.log(info);
+        //     if(info == "iniciando_sesion_admin"){
+        //         window.location.replace('Bienvenida_admin.php');
+
+               
+        //     }else if(info == "iniciando_sesion_recep"){
+        //         window.location.replace('Bienvenida_recepcion.php');
+               
+        //     }
+        //     else if(info == "sesion_iniciada"){
+        //         alert("el usuario ya ha iniciado sesion");
+        //     }
+        //     else if(info == "estan vacios"){
+        //         $('#resultado').html("Error: Los campos estan vacios.");
+               
+        //         setTimeout(() => {
+        //             $('#resultado').html("");
+        //             $('#resultado').hide();
+        //         }, 3000);        
+        //     }
+        // })
+        // $('#resultado').hide();
+        // $('#cargando').hide();
+        // $('#form').show();
+        if($('#name').val()!=="" &&
+        $('#password').val()!==""){
+            $.post('servidor/db.php',{
+                nombre: 	$('#name_user').val(),
+                contraseña:	$('#password').val()
+            },
+            function(info, estado){
+                
+                console.log(info);
+                if(info == "iniciando_sesion_admin"){
+                    window.location.replace('Bienvenida_admin.php');
+
+                }else if(info == "iniciando_sesion_recep"){
+                    window.location.replace('Bienvenida_recepcion.php');
+               
+                }
+                else if(info == "sesion_iniciada"){
+                    $('#con_resp').html("");
+                    $('#con_resp').show();
+                    $('#con_resp').append("<div id='resultado_error'></div>");
+                    $('#resultado_error').html("Error: El usuario ya ha iniciado sesion.");
+                    $('#form').show();
+
+                }
+                else if(info == "estan vacios"){
+                    $('#resultado').html("Error: Los campos estan vacios.");
+               
+                    setTimeout(() => {
+                        $('#resultado').html("");
+                        $('#resultado').hide();
+                    }, 3000);        
+                }
+            })
+        }else{
+        $('#con_resp').show();
+        $('#con_resp').html("");
+        $('#con_resp').append("<div id='resultado_error'></div>");
+        $('#resultado_error').html("Error: Los campos estan vacios, llene todos los campos  .");
+        $('#form').show();
+
+        
+        }
+        $('#con_resp').show();
+        $('#cargando').hide();
+    
+        setTimeout(() => {
+            $('#con_resp').html("");
+            $('#form').show();
+        
+        }, 3000);
+    }, 3000);	
+   
 });
 
 $('#btn_cancel').click(function(){

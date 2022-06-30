@@ -16,10 +16,10 @@ if($_POST){
     $nom    =  $_POST["nombre"];
     $pass   =  $_POST["contraseña"];
     $estado = "sesion_no_iniciada";
-    if(!empty($_POST)){
-        echo 'estan vacios';
+    // if(empty($_POST)){
+    //     echo 'estan vacios';
         
-    }
+    // }
     
     $consulta = "SELECT `nickname`,`password`,`status`,`cargo_id`  FROM `login` WHERE `nickname` = '$nom'";
 
