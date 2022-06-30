@@ -18,7 +18,7 @@
         <a href="login.php">Consultas</a>
         <a href="#agregar">Agregar</a>
         <a href="#inventario">Inventario</a>
-        <a href="login.php" id="usuario_sesion">Cerrar Sesion</a>
+        <a id="usuario_sesion">Cerrar Sesion</a>
         <a href="#ayuda">Ayuda</a>
         <input type="hidden" name="" id="registrarse">
         

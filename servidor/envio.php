@@ -12,19 +12,21 @@ if (!$conn) {
 }
 
 if($_POST){
-
+    
     mysqli_select_db($conn, $database);
    
     
 
-    $name               = $_POST['name'];
-    $nickname           = $_POST['nickname'];
-    $password           = $_POST['password'];
-            
-    $insertar = "INSERT INTO `login`( `name`, `nickname`, `password`, `status`) 
-                VALUES ('$name','$nickname','$password', 0)";
+    $name               = $_POST["name"];
+    $nickname           = $_POST["nickname"];
+    $password           = $_POST["password"];
+    $position           = $_POST["position"];
+          
+    $insertar = "INSERT INTO `login`( `id`,`name`, `nickname`, `password`, `status`, `cargo_id`) 
+                VALUES (NULL,'$name','$nickname','$password', 0, $position)";
     
     $insercion = mysqli_query($conn, $insertar);
+    
     echo "success";
 
     // function crearUsuario(){

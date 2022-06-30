@@ -12,38 +12,7 @@ $('#btn_ini').click(function(){
 	$('#form').hide();
     
     setTimeout(() => {
-        // $.post('servidor/db.php',{
-        //     nombre: 	$('#name_user').val(),
-        //     contraseña:	$('#password').val()
-        // },
-        // function(info, estado){
-        //     div  =	document.getElementById('resultado');
-        //     div.style.display = '';		
-            
-        //     console.log(info);
-        //     if(info == "iniciando_sesion_admin"){
-        //         window.location.replace('Bienvenida_admin.php');
 
-               
-        //     }else if(info == "iniciando_sesion_recep"){
-        //         window.location.replace('Bienvenida_recepcion.php');
-               
-        //     }
-        //     else if(info == "sesion_iniciada"){
-        //         alert("el usuario ya ha iniciado sesion");
-        //     }
-        //     else if(info == "estan vacios"){
-        //         $('#resultado').html("Error: Los campos estan vacios.");
-               
-        //         setTimeout(() => {
-        //             $('#resultado').html("");
-        //             $('#resultado').hide();
-        //         }, 3000);        
-        //     }
-        // })
-        // $('#resultado').hide();
-        // $('#cargando').hide();
-        // $('#form').show();
         if($('#name').val()!=="" &&
         $('#password').val()!==""){
             $.post('servidor/db.php',{
@@ -100,13 +69,15 @@ $('#btn_ini').click(function(){
 
 $('#btn_cancel').click(function(){
     $('#cargando').show();
-    div  =	document.getElementById('resultado');
-    div.style.display = ' ';
-    $('#resultado').html("Cancelando...");
+    $('#con_resp').html("");
+    $('#con_resp').append("<div id='resultado_ok'></div>");
+ 
+    $('#resultado_ok').html("Cancelando...");
+	$('#form').hide();
     setTimeout(() => {
-        $('#cargando').hide();
-        $('#resultado').html("");
-        window.location.replace("login.php");
+        $('#cargando').show();
+        $('#resultado_ok').html("Cancelando...");
+        window.location.replace("index.php");
     }, 3000);
 });
  $('#registrar').click(function(){
@@ -115,54 +86,68 @@ $('#btn_cancel').click(function(){
  });
 
  $('#btn_creando').click(function(){
-    //al dar click en boton registrar
     $('#cargando').show();
-	$('#form').hide();	
-    div  =	document.getElementById('resultado');
-    div.style.display = ' ';
-    $('#resultado').html("Creando usuario...");
+    $('#con_resp').show();
+    $('#con_resp').html("");
+    $('#con_resp').append("<div id='resultado_ok'></div>");
+ 
+    $('#resultado_ok').html("Creando usuario...");
+	$('#form').hide();
+    
 
     //Validando campos completos
-    if($('#name').val()!=="" &&
+    setTimeout(() => {
+        if($('#name').val()!=="" &&
         $('#name_user').val()!=="" &&
         $('#password').val()!=="" &&
-        $('#confirm_password').val()!==""){
+        $('#confirm_password').val()!=="" &&
+        $('#position').val()!== ""){
             
         //validando contraseñas iguales
         if($('#password').val() == $('#confirm_password').val()){
-            $('#resultado').html("Las contraseñas coinciden");
-
+            
             $.post('servidor/envio.php',{
                 name:       $('#name').val(),
                 nickname:   $('#name_user').val(),
                 password:   $('#password').val(),
+                position:   $('#position').val()
                 
             },function(info, estado){
+                console.log(info);
                 if(info == "success"){
-                    $('#resultado').html("El usuario se creo exitosamente");
                     setTimeout(() => {
-                        window.location.replace("pruebas/prueba.php");
+                        window.location.replace("login.php");
                     }, 3000);
                 }
                 else{
-                    $('#resultado').html("Error: no se pudo crear el usuario. Intente otra vez");
+                    $('#con_resp').show();
+                    $('#con_resp').html("");
+                    $('#con_resp').append("<div id='resultado_error'></div>");
+                    $('#resultado_error').html("Error: no se pudo crear el usuario. Intente otra vez");
                 }
             })
 
         }
         else{
-            $('#resultado').html("Las contraseñas no coinciden");
+            $('#con_resp').show();
+            $('#con_resp').html("");
+            $('#con_resp').append("<div id='resultado_error'></div>");
+            $('#resultado_error').html("Error: La contraseña no coinciden");
         }
 
     }else{
-        $('#resultado').html("Por favor, llene todos los campos.");
+        $('#con_resp').html("");
+        $('#con_resp').append("<div id='resultado_error'></div>");
+        $('#resultado_error').html("Por favor, llene todos los campos.");
+
     }
     //retardo
     setTimeout(() => {
-        $('#resultado').html("");
+        $('#con_resp').html("");
         $('#cargando').hide();
 		$('#form').show();	
     }, 4000);
+    }, 3000);
  });
 
  $('#recuperar').click(function(){
@@ -179,4 +164,25 @@ $('#btn_cancel').click(function(){
 		$('#cargando').hide();
 		$('#resultado').html("")
 	}, 3000);
+ });
+ 
+ $('#usuario_sesion').click(function(){
+    alert("cerrando sesion");
+    $.post('servidor/cerrar_sesion.php',{
+        cerrar: 0,
+        nickname: 'jorgedam' 
+    },function(info, estado){
+        console.log(info);
+        if(info == "success"){
+            setTimeout(() => {
+                window.location.replace("login.php");
+            }, 3000);
+        }
+        else{
+            $('#con_resp').show();
+            $('#con_resp').html("");
+            $('#con_resp').append("<div id='resultado_error'></div>");
+            $('#resultado_error').html("Error: no se pudo crear el usuario. Intente otra vez");
+        }
+    })
  });

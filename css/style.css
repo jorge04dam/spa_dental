@@ -23,7 +23,7 @@ body{
     /* background-image: url("../img/mandibula.jpg"); */
     /* min-height: 100vh; */
     display: grid;
-    background: linear-gradient(rgba(138, 190, 114, 0.5),rgba(138, 190, 114, 0.5)),url("../img/sonrisa_feliz.jpg") 
+    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
     background-size: cover;
     height: 900px;
@@ -153,6 +153,9 @@ a:hover{
     height: 200px;
     margin-top: -200px;
 }
+.form_crear_usuario{
+    padding-top: 50px;
+}
 .pendientes, .reportes, .consultas, .agregar, .inventario{
     display: grid;
     gap: 10px;
@@ -245,8 +248,8 @@ form {
 }
 input{
     display: grid;
-    width: 200px;
-    height: 35px;
+    width: 250px;
+    height: 45px;
     border-radius: 50px;
     justify-items: center;
     text-align: center;
@@ -265,7 +268,7 @@ input{
 #resultado_ok{
     background: #8ABE72;
     width: 100%;
-    height: 145px;
+    height: 125px;
     display: grid;
     text-align: center;
     align-items: center;
@@ -274,30 +277,12 @@ input{
 #resultado_error{
     background: #b61010b9;
     width: 100%;
-    height: 145px;
+    height: 125px;
     display: grid;
     text-align: center;
     align-items: center;
     
 }
-/******************************** INICIO: Version para pantallas con resolucion de 1300 px.*****************************/
-@media screen and (max-width: 1600px){
-    body{
-        height: 600px;
-    }
-    
-    #cargando{
-        height: 300px;
-    }
-    #form{
-        margin-bottom: 40px;
-    }
-}
-
-/*****************************************FIN: Version para pantallas con resolucion de 1300 px.************************/
-
-
-
 /************************************************INICIO: version movil***************************************************/
 @media screen and (max-width:450px) {
     .menu_navegacion{
@@ -326,4 +311,47 @@ input{
 }
 
 /********************************************************FIN: version movil ********************************************/
+/******************************** INICIO: Version para pantallas con resolucion de 1300 px.*****************************/
+@media screen and (max-width: 1600px){
+    body{
+        height: 600px;
+    }
+    
+    #cargando{
+        height: 300px;
+    }
+    #form{
+        margin-bottom: 5px;
+    }
+    #resultado_ok{
+        height: 115px;
+    }
+    #resultado_error{
+        height: 105px;       
+    }
+    .form_crear_usuario{
+       height: 490px;
+    }
+}
+
+/*****************************************FIN: Version para pantallas con resolucion de 1300 px.************************/
+
+/******************************** INICIO: Version para pantallas con resolucion de mas de 1300 px.*****************************/
+@media screen and (min-width: 1600px){
+    body{
+        height: 600px;
+    }
+    
+    #cargando{
+        height: 600px;
+    }
+    #form{
+        margin-bottom: 300px;
+    }
+}
+
+/*****************************************FIN: Version para pantallas con resolucion de mas de 1300 px.************************/
+
+
+
 

@@ -26,14 +26,7 @@
         </div>
         <div id="cargando"><img src="img/pulso.gif" alt=""></div>
         <div id="con_resp">
-            <!-- <div id="resultado">
-
-                <input type="hidden" name="" id="btn_creando">
-                <input type="hidden" name="" id="add">
-                <input type="hidden" name="" id="usuario_sesion">
-                <input type="hidden" name="" id="recuperar">
-    
-            </div> -->
+            
         </div>
     </form>
     </div>

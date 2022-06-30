@@ -10,11 +10,9 @@
 </head>
 <body>
 
-    </div>
-   
     <p class="mensaje_bienvenida">
        
-        Bienvenido al sistema web de Spa Dental Lindavista
+        Bienvenido Spa Dental Lindavista
     </p>
     <div class="welcome">
         
@@ -28,11 +26,6 @@
    
     <div class="logo">
         <img src="img/logo-150x150.png" alt="add-taks" >
-    </div>
-    <div class="footer">
-        <p>Todos los derechos reservado ®Spa Dental Linda Vista ®2022</p>
-    </div>
-   
-   
+    </div>   
 </body>
 </html>
