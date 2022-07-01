@@ -13,17 +13,9 @@
     /* --background_image_url: url("img/principal.jpg") */
 }
 body{
-    /* background-color: #eABE72; */
-    /* background: linear-gradient(to top, #8ABE72, white); */
-    /* position: relative; */
-    /* width: 1500px;
-    height: 600px; */
-    /* background-image: url("../img/mandibula.jpg");
-    background-repeat: no-repeat; */
-    /* background-image: url("../img/mandibula.jpg"); */
-    /* min-height: 100vh; */
+    
     display: grid;
-    background: linear-gradient(rgba(138, 190, 114, 0.2),rgba(138, 190, 114, 0.2)),url("../img/sonrisa_feliz.jpg") 
+    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
     background-size: cover;
     height: 900px;
@@ -315,7 +307,46 @@ input{
         margin-top: 700px;
     }
     body{
-        height: 820px;
+        height: 915px;
+    }
+    .welcome{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(1,auto);
+        width: 95%;
+        height: 400px;
+        margin-top: 0px;
+        margin-left: 2.5%;
+    }
+    .mensaje_bienvenida{
+        margin-top: 0px;
+    }
+    /* .logo{
+        margin-right: 80%;
+        margin-top: 50%;
+    } */
+    .logo>img{
+        margin-top: 50%;
+        margin-left: -24%;
+        
+    }
+    #position_select{
+        display: grid;
+        width: 250px;
+        height: 45px;
+        border-radius: 50px;
+        justify-items: center;
+        text-align: center;
+        margin: 10px 0; 
+        background: rgba(255, 255, 255, 0.5)
+    }
+    .op{
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: bold;
+
     }
 
 }
@@ -324,7 +355,10 @@ input{
 /******************************** INICIO: Version para pantallas con resolucion de 1300 px.*****************************/
 @media screen and (max-width: 1600px){
     body{
-        height: 600px;
+        height: 615px;
+        background: linear-gradient(rgba(49, 116, 55, 0.5),rgba(49, 116, 55, 0.5)),url("../img/sonrisa_feliz.jpg") 
+        no-repeat center center fixed;
+        background-size: cover;
     }
     
     #cargando{
@@ -342,6 +376,14 @@ input{
     .form_crear_usuario{
        height: 490px;
     }
+    .welcome{
+        margin-top: 0px;
+    }
+    .logo{
+        margin-left: 45%;
+        margin-top: -15%;
+    }
+    
 }
 
 /*****************************************FIN: Version para pantallas con resolucion de 1300 px.************************/
@@ -358,6 +400,7 @@ input{
     #form{
         margin-bottom: 300px;
     }
+    
 }
 
 /*****************************************FIN: Version para pantallas con resolucion de mas de 1300 px.************************/

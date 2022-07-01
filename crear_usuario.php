@@ -25,8 +25,8 @@
             <input type="password" id="confirm_password" placeholder="Confirmar Contraseña">
             <label for="position"></label>
             <select name="" id="position_select">
-                <option value="1">Administrador</option>
-                <option value="2" selected>Recepcion</option>
+                <option value="1" clase= "op">Administrador</option>
+                <option value="2" clase= "op" selected>Recepcion</option>
             </select>
 
 
