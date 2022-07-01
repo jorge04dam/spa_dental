@@ -24,7 +24,10 @@
             <label for="confirm_password"></label>
             <input type="password" id="confirm_password" placeholder="Confirmar Contraseña">
             <label for="position"></label>
-            <input type="text" id="position" placeholder="Cargo del usuario">
+            <select name="" id="position_select">
+                <option value="1">Administrador</option>
+                <option value="2" selected>Recepcion</option>
+            </select>
 
 
             <input type="button" value="Cancelar" class="btn_cancelar" id="btn_cancel">

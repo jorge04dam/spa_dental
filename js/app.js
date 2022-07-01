@@ -2,6 +2,8 @@
 $('#cargando').hide();
 $('#resultado').hide();
 
+let usuario_en_sesion = [];
+
 // Eventos 
 $('#btn_ini').click(function(){
     $('#cargando').show();
@@ -23,6 +25,7 @@ $('#btn_ini').click(function(){
                 
                 console.log(info);
                 if(info == "iniciando_sesion_admin"){
+                    // usuario_en_sesion.push(nombre);
                     window.location.replace('Bienvenida_admin.php');
 
                 }else if(info == "iniciando_sesion_recep"){
@@ -110,7 +113,7 @@ $('#btn_cancel').click(function(){
                 name:       $('#name').val(),
                 nickname:   $('#name_user').val(),
                 password:   $('#password').val(),
-                position:   $('#position').val()
+                position:   $('#position_select').val()
                 
             },function(info, estado){
                 console.log(info);
@@ -170,7 +173,7 @@ $('#btn_cancel').click(function(){
     alert("cerrando sesion");
     $.post('servidor/cerrar_sesion.php',{
         cerrar: 0,
-        nickname: 'jorgedam' 
+        nickname: 'pegaso' 
     },function(info, estado){
         console.log(info);
         if(info == "success"){
@@ -182,7 +185,7 @@ $('#btn_cancel').click(function(){
             $('#con_resp').show();
             $('#con_resp').html("");
             $('#con_resp').append("<div id='resultado_error'></div>");
-            $('#resultado_error').html("Error: no se pudo crear el usuario. Intente otra vez");
+            $('#resultado_error').html("Error: no se pudo cerra la sesión");
         }
     })
  });

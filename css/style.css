@@ -23,7 +23,7 @@ body{
     /* background-image: url("../img/mandibula.jpg"); */
     /* min-height: 100vh; */
     display: grid;
-    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
+    background: linear-gradient(rgba(138, 190, 114, 0.2),rgba(138, 190, 114, 0.2)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
     background-size: cover;
     height: 900px;
@@ -247,6 +247,16 @@ form {
     justify-items: center;
 }
 input{
+    display: grid;
+    width: 250px;
+    height: 45px;
+    border-radius: 50px;
+    justify-items: center;
+    text-align: center;
+    margin: 10px 0; 
+    background: rgba(255, 255, 255, 0.5)
+}
+#position_select{
     display: grid;
     width: 250px;
     height: 45px;
