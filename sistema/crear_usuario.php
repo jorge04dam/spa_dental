@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spa Dental Linda Vista</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="img" href="/">
 </head>
 <body>
@@ -34,7 +34,7 @@
             
             <input type="button" value="Crear usuario" class="btn_iniciar" id="btn_creando">
             </div>
-            <div id="cargando"><img src="img/pulso.gif" alt=""></div>
+            <div id="cargando"><img src="../img/pulso.gif" alt=""></div>
             <div id="con_resp">
 
             </div>
@@ -42,6 +42,8 @@
             
         </form>
     </div>
-    <?php include 'library.php';?>
+    <?php include '../include/library_js.php'; ?>
+
+    
 </body>
 </html>

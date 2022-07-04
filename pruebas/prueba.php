@@ -1,20 +1,64 @@
-<?php ?>
-<link rel="stylesheet" href="../css/style.css">
-<div class="container">
-    <h1 class= "mensaje_bienvenida">Iniciar sesión</h1>
-    <form action="../servidor/db.php" class="form_login_usuario" method= "post">
-        <label for="name_user"></label>
-        <input type="text" id="name_user" placeholder="Nombre de usuario">
-        <label for="password"></label>
-        <input type="password" id="password" placeholder="Contraseña">
-
-        <input type="button" value="Cancelar" class="btn_cancelar" id="btn_cancel">
-        <input type="button" value="Iniciar sesion" class="btn_crear" id="btn_ini">
-        <input type="button" value="Registrarse" class="btn_iniciar" id="registrar">
-        <div id="cargando"><img src="../img/pulso.gif" alt=""></div>
-        <div class="prueba" id= "resultado"></div>
-    </form>
-</div>
 <?php
-    include 'library.php';
+    session_start();
+
 ?>
+<link rel="stylesheet" href="../css/prueba.css">
+
+		<div class="header">
+			
+			<h1>Sistema Facturación</h1>
+			<div class="optionsBar">
+				<p>México ?></p>
+				<span>|</span>
+				<span class="user"><?php echo "info user"?></span>
+				<!-- <img class="photouser" src="img/user.png" alt="Usuario"> -->
+				<a href="salir.php"><img class="close" src="" alt="Salir del sistema" title="Salir"></a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.php">Inicio</a></li>
+			<?php 
+				if($_SESSION['status'] == 1){
+			 ?>
+				<li class="principal">
+
+					<a href="#">Usuarios</a>
+					<ul>
+						<li><a href="registro_usuario.php">Nuevo Usuario</a></li>
+						<li><a href="lista_usuarios.php">Lista de Usuarios</a></li>
+					</ul>
+				</li>
+			<?php } ?>
+				<li class="principal">
+					<a href="#">Clientes</a>
+					<ul>
+						<li><a href="#">Nuevo Cliente</a></li>
+						<li><a href="#">Lista de Clientes</a></li>
+					</ul>
+				</li>
+				<li class="principal">
+					<a href="#">Proveedores</a>
+					<ul>
+						<li><a href="#">Nuevo Proveedor</a></li>
+						<li><a href="#">Lista de Proveedores</a></li>
+					</ul>
+				</li>
+				<li class="principal">
+					<a href="#">Productos</a>
+					<ul>
+						<li><a href="#">Nuevo Producto</a></li>
+						<li><a href="#">Lista de Productos</a></li>
+					</ul>
+				</li>
+				<li class="principal">
+					<a href="#">Facturas</a>
+					<ul>
+						<li><a href="#">Nuevo Factura</a></li>
+						<li><a href="#">Facturas</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<header>
+	</header>

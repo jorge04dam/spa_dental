@@ -17,7 +17,7 @@ $('#btn_ini').click(function(){
 
         if($('#name').val()!=="" &&
         $('#password').val()!==""){
-            $.post('servidor/db.php',{
+            $.post('../servidor/db.php',{
                 nombre: 	$('#name_user').val(),
                 contraseña:	$('#password').val()
             },
@@ -80,7 +80,7 @@ $('#btn_cancel').click(function(){
     setTimeout(() => {
         $('#cargando').show();
         $('#resultado_ok').html("Cancelando...");
-        window.location.replace("index.php");
+        window.location.replace("../index.php");
     }, 3000);
 });
  $('#registrar').click(function(){
@@ -109,7 +109,7 @@ $('#btn_cancel').click(function(){
         //validando contraseñas iguales
         if($('#password').val() == $('#confirm_password').val()){
             
-            $.post('servidor/envio.php',{
+            $.post('../servidor/envio.php',{
                 name:       $('#name').val(),
                 nickname:   $('#name_user').val(),
                 password:   $('#password').val(),
@@ -171,12 +171,12 @@ $('#btn_cancel').click(function(){
  
  $('#usuario_sesion').click(function(){
     alert("cerrando sesion");
-    $.post('servidor/cerrar_sesion.php',{
+    $.post('../servidor/cerrar_sesion.php',{
         cerrar: 0,
-        nickname: 'pegaso' 
+        nickname: 'jorgedam' 
     },function(info, estado){
         console.log(info);
-        if(info == "success"){
+        if(info == 1){
             setTimeout(() => {
                 window.location.replace("login.php");
             }, 3000);

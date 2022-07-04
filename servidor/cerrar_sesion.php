@@ -1,4 +1,6 @@
 <?php 
+
+
 $servername = "localhost";
 $database = "spa_dental_lindavista";
 $username = "root";
@@ -12,18 +14,22 @@ if (!$conn) {
 }
 
 if($_POST){
+    session_start();
     $status =   $_POST["cerrar"];
-    $nom =   $_POST["nickname"];
+    $nom =   $_SESSION["nickname"];
     
     $cerrar_sesion = "UPDATE `login` SET `status`= 0 WHERE `nickname`= '$nom'";
-    mysqli_query($conn, $cerrar_sesion);
-    $estado = "success";
+    $estado = mysqli_query($conn, $cerrar_sesion);
+    // $estado = "success";
     echo $estado;
+
+    session_destroy();
+    
 }else{
     header('Location: ../index.php');
 }
 
     
-
+mysqli_close($conn);
 
 ?>

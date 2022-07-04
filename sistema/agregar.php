@@ -8,7 +8,6 @@
 	
 </div>
 	
-<?php
-	include 'footer.php';
+<?php include '../include/library_js.php'; ?>
 
-?>
+    <?php include '../include/footer.php'; ?>

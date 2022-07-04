@@ -45,10 +45,9 @@
         <p>Todos los derechos reservado ®Spa Dental Linda Vista ®2022</p>
     </div>
         
-    <?php
-        include 'footer.php';
+    <?php include '../include/library_js.php'; ?>
 
-    ?>
+    <?php include '../include/footer.php'; ?>
    
 </body>
 </html>

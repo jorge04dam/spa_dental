@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spa Dental Linda Vista</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="img" href="/">
 </head>
 <body>
@@ -22,7 +22,7 @@
         <input type="hidden" value="Iniciar sesion" class="btn_crear" id="btn_ini">
         <input type="button" value="Recuperar" class="btn_iniciar" id="recuperar">
         <div id="resultado"></div>
-        <div id="cargando"><img src="img/pulso.gif" alt=""></div>
+        <div id="cargando"><img src="../img/pulso.gif" alt=""></div>
         <!-- <div id="resultado"> -->
         
         <input type="hidden" name="" id="btn_creando">
@@ -33,11 +33,9 @@
     </form>
     </div>
     
-    <?php 
-    include 'library.php';
-    // include 'footer.php';
-    ?>
-    <script type="text/javascript" src="js/app.js"></script>
+    
+    <?php include '../include/library_js.php'; ?>
+
     
 </body>
 </html>

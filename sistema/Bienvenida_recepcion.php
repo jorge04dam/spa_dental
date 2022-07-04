@@ -10,6 +10,6 @@
         <div class="container">
               <h1>Bienvenida <?php echo "recepción en turno"; ?></h1>
         </div>
-    <?php include 'library.php'; ?>
+        <?php include '../include/library_js.php'; ?>
 
-    <?php include 'footer.php'; ?>
+        <?php include '../include/footer.php'; ?>

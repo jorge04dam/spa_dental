@@ -24,7 +24,7 @@
     <div class="add">
         <img src="img/agregar1.png" alt="add-taks" >
     </div>
-    <?php include 'library.php'; ?>
+    <?php include '../include/library_js.php'; ?>
 
-    <?php include 'footer.php'; ?>
+    <?php include '../include/footer.php'; ?>
     

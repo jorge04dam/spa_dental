@@ -1,3 +1,14 @@
+<?php
+session_start();
+//se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
+//¿Hay una sesion activa o iniciada?
+    if(!empty($_SESSION['active'])){
+        header('location: sistema/Bienvenida_admin.php');
+    }else{
+        
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +29,10 @@
     <div class="welcome">
         
         <div class="crear_usuario">
-            <a href="crear_usuario.php"><p>Crear Usuario</p></a>
+            <a href="sistema/crear_usuario.php"><p>Crear Usuario</p></a>
         </div>
         <div class="iniciar_sesion">
-            <a href="login.php"><p>Iniciar Sesion</p></a>
+            <a href="sistema/login.php"><p>Iniciar Sesion</p></a>
         </div>
     </div>
    

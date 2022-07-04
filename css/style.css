@@ -83,12 +83,13 @@ body{
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(8,auto);
-    /* margin-left: 30px; */
-    /* background: linear-gradient(to top, white, #8ABE72); */
     height: 100px;
     width: 100%;
     position: fixed;
     z-index: 100;
+    background: rgba(255,255,255,0.99);
+    margin-left: -8px;
+    border-radius: 15px;
 }
 h1{
     text-align: center;
@@ -109,13 +110,13 @@ a{
     grid-template-columns: auto auto auto auto auto auto auto; */
     text-decoration-style: none;
     text-decoration-line: none;
-    color: white;
+    color: green;
     font-weight: 500;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
     display: grid;
     align-items: center;
     justify-items: center;
+    
 }
 a:hover{
     color: #eABE72;
@@ -308,6 +309,7 @@ input{
     }
     body{
         height: 915px;
+        margin-top: 0px;
     }
     .welcome{
         display: grid;
@@ -359,6 +361,7 @@ input{
         background: linear-gradient(rgba(49, 116, 55, 0.5),rgba(49, 116, 55, 0.5)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
         background-size: cover;
+        margin-top: 0px;
     }
     
     #cargando{
@@ -382,6 +385,9 @@ input{
     .logo{
         margin-left: 45%;
         margin-top: -15%;
+    }
+    .menu_navegacion{
+
     }
     
 }
