@@ -1,9 +1,13 @@
    <?php 
-    if($_POST){
-        header('Location: http://127.0.0.1/spa_dental/login.php');
-    }
+    session_start();
+    //se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
+    //¿no Hay una sesion activa o iniciada?
+        if(empty($_SESSION['active'])){
+            header('location: ../sistema/Bienvenida_admin.php');
+        }
+        include '../include/header.php';
     ?>
-    <?php include 'header.php'; ?>
+    
         <div class="container">
         
         <div class="pendientes" id="tareas">
@@ -22,9 +26,10 @@
         
     </div>
     <div class="add">
-        <img src="img/agregar1.png" alt="add-taks" >
+        <img src="../img/agregar1.png" alt="add-taks" >
     </div>
+    <?php include '../include/footer.php'; ?>
     <?php include '../include/library_js.php'; ?>
 
-    <?php include '../include/footer.php'; ?>
+    
     

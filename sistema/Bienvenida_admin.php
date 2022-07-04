@@ -15,8 +15,7 @@
         
     ?>
         <div class="container">
-            <h1>Usuario <?php echo $_SESSION['nickname']."Cargo: ".$_SESSION['cargo'];  ?></h1>
-            
+            <hr>
             <h1>
             Sesiones abiertas:  Raul y Alonso.
             <hr>

@@ -8,9 +8,8 @@
         include '../include/header.php';
 ?>
 <div class="container">
-	<h1>Hola, esta es la seccion de ayuda. <hr>
-    Aquí podrás conocer el correcto funcionamiento del sistema de Spa
-    dental lindavista.
+	<h1>Bienvenido al apartado de consultas. <hr>
+    Aquí se podra visualizar todo tipo de registro que exista en la base de datos.
     </h1>
 </div>
 	

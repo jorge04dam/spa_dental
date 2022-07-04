@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,17 +10,33 @@
 </head>
 <body>
     
-    
-    <div class="menu_navegacion">
-        <a href="#"><img src="../img/logo-150x150.png" class="img_logo" alt=""></a>
-        <a href="tareas.php">Tablero de pendientes</a>
-        <a href="reportes.php">Reportes</a>
-        <a href="login.php">Consultas</a>
-        <a href="#agregar">Agregar</a>
-        <a href="#inventario">Inventario</a>
-        <a id="usuario_sesion">Cerrar Sesion</a>
-        <a href="#ayuda">Ayuda</a>
-        <input type="hidden" name="" id="registrarse">
+    <header>
+        <span><?php echo $_SESSION['nickname'];?></span>
+        <span><?php 
+       date_default_timezone_set('America/Mexico_City');
+        $fecha = date('l')."-".date('t')."-".date('F')."-".date('Y');
+        echo $fecha;
+        ?></span>
+        <span>
+        <?php 
+        if($_SESSION['cargo']== 1){
+            echo "Administrador";
+        }else{
+            echo "Recepcion";
+        }
         
+        ?>
+        </span></header>
+    <div class="menu_navegacion">
+        <a href="../sistema/Bienvenida_admin.php"><img src="../img/logo-150x150.png" class="img_logo" alt=""></a>
+        <a href="../sistema/Bienvenida_admin.php">Inicio</a>
+        <a href="../sistema/tareas.php">Tablero de pendientes</a>
+        <a href="../sistema/reportes.php">Reportes</a>
+        <a href="../sistema/consultas.php">Consultas</a>
+        <a href="../sistema/agregar.php">Agregar</a>
+        <a href="../sistema/inventario.php">Inventario</a>
+        <a id="usuario_sesion">Cerrar Sesion</a>
+        <a href="../sistema/ayuda.php">Ayuda</a>
+
     </div>
     <!-- <div class="header"> -->

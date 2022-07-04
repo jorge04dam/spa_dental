@@ -15,9 +15,9 @@
 body{
     
     display: grid;
-    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
+    /* background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover; */
     height: 900px;
    
 }
@@ -82,7 +82,7 @@ body{
 .menu_navegacion{
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(8,auto);
+    grid-template-columns: repeat(9,auto);
     height: 100px;
     width: 100%;
     position: fixed;
@@ -90,6 +90,8 @@ body{
     background: rgba(255,255,255,0.99);
     margin-left: -8px;
     border-radius: 15px;
+    margin-top: 42px;
+    
 }
 h1{
     text-align: center;
@@ -99,6 +101,19 @@ h1{
     display: grid;
     gap: 2px;
     grid-template-columns: auto auto;
+}
+header{
+    display: grid;
+    background-color: #eABE72;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+    position: fixed;
+    z-index: 90;
+    margin-top: -8px;
+    margin-left: -8px;
 }
 .add{
     width:50px;
@@ -116,6 +131,7 @@ a{
     display: grid;
     align-items: center;
     justify-items: center;
+    border-right: 1px solid rgba(153, 119, 51, 0.825);
     
 }
 a:hover{
@@ -131,11 +147,12 @@ a:hover{
 }
 .container{
     display: grid;
-    margin-top: 100px;
+    margin-top: 200px;
     height: 900px;
-    /* gap: 10px; */
-    /* grid-template-columns: repeat(2, auto); */
-    /* height: 800px; */
+    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
+        no-repeat center center fixed;
+    background-size: cover;
+    
 }
 .container_login{
     display: grid;
@@ -149,6 +166,7 @@ a:hover{
 .form_crear_usuario{
     padding-top: 50px;
 }
+
 .pendientes, .reportes, .consultas, .agregar, .inventario{
     display: grid;
     gap: 10px;
@@ -386,9 +404,9 @@ input{
         margin-left: 45%;
         margin-top: -15%;
     }
-    .menu_navegacion{
+    /* .menu_navegacion{
 
-    }
+    } */
     
 }
 
@@ -406,7 +424,12 @@ input{
     #form{
         margin-bottom: 300px;
     }
-    
+    .pendientes{
+        margin-top: 50px;
+    }
+    .footer{
+        margin-bottom: 2000px;
+    }
 }
 
 /*****************************************FIN: Version para pantallas con resolucion de mas de 1300 px.************************/
