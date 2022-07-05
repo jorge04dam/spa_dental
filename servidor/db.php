@@ -13,23 +13,15 @@ if($_POST){
 
     $datos= mysqli_query($conn, $consulta);
 
-    // $resultado = mysqli_num_rows($datos);
+    $resultado = mysqli_num_rows($datos);
 
-	// 		if($resultado > 0)
-	// 		{
-	// 			$data = mysqli_fetch_array($datos);
-	// 			$_SESSION['active']     = true;
-	// 			$_SESSION['id']         = $data['id'];
-	// 			$_SESSION['name']       = $data['name'];
-	// 			$_SESSION['nickname']   = $data['nickname'];
-	// 			$_SESSION['status']     = $data['status'];
-	// 			$_SESSION['cargo']      = $data['cargo_id'];
-
-	// 			header('location: ../sistema/Bienvenida_admin.php');
-	// 		}else{
-	// 			// $alert = 'El usuario o la clave son incorrectos';
-	// 			session_destroy();
-	// 		}
+			if(!$resultado > 0)
+			{
+				// $alert = 'El usuario o la clave son incorrectos';
+				session_destroy();
+                $estado = "credenciales_incorrectas";
+                echo $estado;
+			}
   
     while ($fila = mysqli_fetch_array($datos)){
         

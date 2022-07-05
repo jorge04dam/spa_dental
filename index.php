@@ -3,7 +3,7 @@ session_start();
 //se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
 //¿Hay una sesion activa o iniciada?
     if(!empty($_SESSION['active'])){
-        header('location: sistema/Bienvenida_admin.php');
+        header('location: sistema/bienvenida.php');
     }else{
         
     }
@@ -29,10 +29,10 @@ session_start();
     <div class="welcome">
         
         <div class="crear_usuario">
-            <a href="sistema/crear_usuario.php"><p>Crear Usuario</p></a>
+            <a href="sistema/crear_usuario.php"><p class="btn_index">Crear Usuario</p></a>
         </div>
         <div class="iniciar_sesion">
-            <a href="sistema/login.php"><p>Iniciar Sesion</p></a>
+            <a href="sistema/login.php"><p class="btn_index">Iniciar Sesion</p></a>
         </div>
     </div>
    

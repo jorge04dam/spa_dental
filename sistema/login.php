@@ -5,12 +5,12 @@
 //se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
 //¿Hay una sesion activa o iniciada?
     if(!empty($_SESSION['active'])){
-        header('location: Bienvenida_admin.php');
+        header('location: bienvenida.php');
     }else{
         
     }
 ?>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,7 @@
 <body>
     <div class="container_login">
       <h1 class= "mensaje_bienvenida">Iniciar sesión</h1>
-    <form action="servidor/db.php" class="form_login_usuario" method="POST">
+    <form action="../servidor/db.php" class="form_login_usuario" method="POST">
         <div id="form">
         <label for="name_user"></label>
         <input type="text" id="name_user" placeholder="Nombre de usuario">
@@ -41,12 +41,6 @@
         </div>
     </form>
     </div>
-    
-  
-    <?php include '../include/library_js.php';?>
-   
-
-
-    
+    <?php include '../include/library_js.php';?>  
 </body>
 </html>

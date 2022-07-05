@@ -25,11 +25,11 @@ $('#btn_ini').click(function(){
                 
                 console.log(info);
                 if(info == "iniciando_sesion_admin"){
-                    // usuario_en_sesion.push(nombre);
-                    window.location.replace('Bienvenida_admin.php');
+                   
+                    window.location.replace('bienvenida.php');
 
                 }else if(info == "iniciando_sesion_recep"){
-                    window.location.replace('Bienvenida_recepcion.php');
+                    window.location.replace('bienvenida.php');
                
                 }
                 else if(info == "sesion_iniciada"){
@@ -39,6 +39,12 @@ $('#btn_ini').click(function(){
                     $('#resultado_error').html("Error: El usuario ya ha iniciado sesion.");
                     $('#form').show();
 
+                }else if(info == "credenciales_incorrectas"){
+                    $('#con_resp').html("");
+                    $('#con_resp').show();
+                    $('#con_resp').append("<div id='resultado_error'></div>");
+                    $('#resultado_error').html("Error: Usuario o contraseña incorrecta.");
+                    $('#form').show();
                 }
                 else if(info == "estan vacios"){
                     $('#resultado').html("Error: Los campos estan vacios.");
@@ -189,3 +195,4 @@ $('#btn_cancel').click(function(){
         }
     })
  });
+

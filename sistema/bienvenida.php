@@ -1,14 +1,11 @@
    <?php 
-   session_start();
-    if($_POST){
-        header('Location: http://127.0.0.1/spa_dental/login.php');
-    }
+        session_start();
+        //se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
+        //¿no Hay una sesion activa o iniciada?
+       if(empty($_SESSION['active'])){
+           header('location: ../sistema/bienvenida.php');
+       }
     
-//se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
-//¿no hay una sesion activa o iniciada?
-    if(empty($_SESSION['active'])){
-        header('location: login.php');
-    }
     ?>
     <?php 
         include '../include/header.php';
