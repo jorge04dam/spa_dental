@@ -22,7 +22,7 @@ if($_POST){
     $estado = mysqli_query($conn, $cerrar_sesion);
     // $estado = "success";
     echo $estado;
-
+    
     session_destroy();
     
 }else{

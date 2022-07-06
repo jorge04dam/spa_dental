@@ -2,8 +2,6 @@
 $('#cargando').hide();
 $('#resultado').hide();
 
-let usuario_en_sesion = [];
-
 // Eventos 
 $('#btn_ini').click(function(){
     $('#cargando').show();
@@ -29,7 +27,7 @@ $('#btn_ini').click(function(){
                     window.location.replace('bienvenida.php');
 
                 }else if(info == "iniciando_sesion_recep"){
-                    window.location.replace('bienvenida.php');
+                    window.location.replace('tareas.php');
                
                 }
                 else if(info == "sesion_iniciada"){

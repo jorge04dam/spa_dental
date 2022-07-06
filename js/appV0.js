@@ -14,7 +14,6 @@ const estilosenProceso		= document.getElementById("cardenProceso");
 const estilosRealizado		= document.getElementById("cardRealizado");
 const estilos 				= document.getElementById("cardTareas");
 
-
 let validarUsuario = (usuario, contraseña) => {
 	if(usuario.value == credencialesUsuario.usuario && 
 		contraseña.value == credencialesUsuario.contraseña){

@@ -9,7 +9,6 @@
     <link rel="img" href="/">
 </head>
 <body>
-    
     <header>
         <span><?php echo $_SESSION['nickname'];?></span>
         <span><?php 
@@ -28,7 +27,22 @@
         ?>
         </span></header>
     <div class="menu_navegacion">
-        <a href="../sistema/bienvenida.php"><img src="../img/logo-150x150.png" class="img_logo" alt=""></a>
+        <a  
+        <?php
+            if($_SESSION['cargo'] == 1){
+                ?>
+                href="../sistema/bienvenida.php"
+        <?php
+            }else{
+        ?>
+                href="../sistema/tareas.php"
+        <?php
+            }
+        ?>
+            ><img src="../img/logo-150x150.png" class="img_logo" alt=""></a>
+        
+
+        <!-- <a href="../sistema/bienvenida.php"><img src="../img/logo-150x150.png" class="img_logo" alt=""></a> -->
         <a 
         <?php 
         if($_SESSION['cargo'] == 1){?>
@@ -43,6 +57,7 @@
         if($_SESSION['cargo'] == 1){?>
         href="../sistema/inventario.php"<?php
         }?>>Inventario</a>
+
         <a id="usuario_sesion">Cerrar Sesion</a>
         <a href="../sistema/ayuda.php">Ayuda</a>
 

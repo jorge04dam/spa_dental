@@ -135,7 +135,7 @@ a{
 a:hover{
     /* color: #eABE72; */
     color: rgb(49 116 55 / 100%);
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
 }
 .btn_index{
     color: rgba(255,255,255,0.55);
@@ -382,7 +382,7 @@ input{
 @media screen and (max-width: 1600px){
     body{
         height: 615px;
-        background: linear-gradient(rgba(49, 116, 55, 0.5),rgba(49, 116, 55, 0.5)),url("../img/sonrisa_feliz.jpg") 
+        background: linear-gradient(rgba(49, 116, 55, 0.4  ),rgba(49, 116, 55, 0.3)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
         background-size: cover;
         margin-top: 0px;
@@ -402,6 +402,9 @@ input{
     }
     .form_crear_usuario{
        height: 490px;
+    }
+    #usuario_cesion{
+        cursor: pointer;
     }
     .welcome{
         margin-top: 0px;
