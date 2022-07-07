@@ -21,6 +21,7 @@ body{
     height: 900px;
    
 }
+
 .mensaje_bienvenida{
     margin-top: 80px;
     text-align: center;
@@ -98,6 +99,10 @@ h1{
     text-align: center;
     color:#fff
 }
+h2{
+    text-align: center;
+    color:black;
+}
 .header{
     display: grid;
     gap: 2px;
@@ -163,6 +168,28 @@ a:hover{
 .container_login{
     display: grid;
     height: 575px;
+}
+.container_inicio{
+    display: grid;
+    grid-template-columns: auto;
+    height: 725px;
+    margin-top: 125px;
+    
+}
+table{
+    width: 700px;
+    height: 120px;
+    text-align: center;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    margin-left: 37%;
+    margin-bottom: 100px;
+    box-shadow: 2px 2px 20px teal;
+}
+tr{
+    border-radius: 5px;
+    background-color: aliceblue;
 }
 .form_login_usuario{
     display: grid;
@@ -294,11 +321,12 @@ input{
 }
 #resultado_ok{
     background: #8ABE72;
-    width: 100%;
+    width: 50%;
     height: 125px;
     display: grid;
     text-align: center;
     align-items: center;
+    margin-left: 30%;
     
 }
 #resultado_error{
