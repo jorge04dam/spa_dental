@@ -4,10 +4,7 @@ session_start();
 //¿Hay una sesion activa o iniciada?
     if(!empty($_SESSION['active'])){
         header('location: sistema/bienvenida.php');
-    }else{
-        
     }
-    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +20,6 @@ session_start();
 <body>
 
     <p class="mensaje_bienvenida">
-       
         Bienvenido Spa Dental Lindavista
     </p>
     <div class="welcome">

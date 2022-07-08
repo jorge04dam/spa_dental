@@ -33,7 +33,7 @@
         <input type="button" value="Cancelar" class="btn_cancelar" id="btn_cancel">
         <input type="button" value="Iniciar sesion" class="btn_crear" id="btn_ini">
         <input type="button" value="Registrarse" class="btn_iniciar" id="registrar">
-        <a href="recuperar_contraseña.php" class="olvido_contraseña">Olvido su contraseña</a>
+        <a href="recuperar_contraseña.php" class="olvido_contraseña">¿Olvido su contraseña?</a>
         </div>
         <div id="cargando"><img src="../img/pulso.gif" alt=""></div>
         <div id="con_resp">

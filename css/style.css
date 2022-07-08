@@ -23,7 +23,7 @@ body{
 }
 
 .mensaje_bienvenida{
-    margin-top: 80px;
+    margin-top: 20px;
     text-align: center;
     font-family: sans-serif;
     font-size: 50px;
@@ -46,28 +46,30 @@ body{
     display: grid;
     gap: 10px;
     border-radius: 10px;
-    border: solid 1px;
-    background: linear-gradient(rgba(49, 116, 55, 0.75),rgba(49, 116, 55, 0.75));
+    border: solid 0.5px;
+    background: linear-gradient(rgba(49, 116, 55, 0.1),rgba(49, 116, 55, 0.1));
     color: white;
     height: 200px;
     text-align: center;
     align-items: center;
     font-size: 25px;
+    box-shadow: 5px 5px 20px rgb(49, 116, 55);
 }
 .crear_usuario:hover, .iniciar_sesion:hover{
-    background-color: #003a55;
+    background-color: rgba(49, 116, 55, 0.9);
+   
 }
 .btn_crear, .btn_iniciar{
     background-color: #8ABE72;
     color: #fff;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 700;
 }
 
 .btn_cancelar{
     background-color: rgba(207, 23, 23, 0.5);
     color: #fff;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 700;
 }
 .btn_cancelar:hover{
@@ -80,6 +82,7 @@ body{
 }
 .olvido_contraseña{
     font-size: 20px;
+    color: white;
 }
 .menu_navegacion{
     display: grid;
@@ -151,7 +154,7 @@ a:hover{
     color: rgba(255,255,255,0.55);
 }
 .btn_index:hover{
-    color: rgba(255,255,255,0.99);
+    color: rgba(255,255,255,1);
 }
 
 .img_logo{
@@ -211,7 +214,8 @@ tr{
 .form_login_usuario{
     display: grid;
     height: 200px;
-    margin-top: -200px;
+    margin-top: -250px;
+
 }
 .form_crear_usuario{
     padding-top: 50px;
@@ -309,18 +313,19 @@ form {
 }
 input{
     display: grid;
-    width: 250px;
-    height: 45px;
+    width: 315px;
+    height: 65px;
     border-radius: 50px;
     justify-items: center;
     text-align: center;
     margin: 10px 0; 
-    background: rgba(255, 255, 255, 0.5)
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 25px;
 }
 #position_select{
     display: grid;
-    width: 250px;
-    height: 45px;
+    width: 315px;
+    height: 65px;
     border-radius: 50px;
     justify-items: center;
     text-align: center;
@@ -337,22 +342,29 @@ input{
     width: 100%;
 }
 #resultado_ok{
-    background: #8ABE72;
+    /* background: #8ABE72; */
+    background: rgba(138, 191, 114, .85);
     width: 50%;
     height: 125px;
     display: grid;
     text-align: center;
     align-items: center;
-    margin-left: 30%;
+    /* margin-left: 30%; */
+    margin: 0 auto;
+    box-shadow: 5px 5px 20px #8ABE72;
+    border-radius: 5px;
     
 }
 #resultado_error{
     background: #b61010b9;
-    width: 100%;
+    width: 50%;
     height: 125px;
     display: grid;
     text-align: center;
     align-items: center;
+    margin: 0 auto;
+    box-shadow: 5px 5px 20px #b61010b9;
+    border-radius: 5px;
     
 }
 /************************************************INICIO: version movil***************************************************/
@@ -362,6 +374,9 @@ input{
         overflow: hidden;
         /* background: linear-gradient(to top, white, #8d0b32); */
         
+    }
+    header{
+        width: 100%;
     }
     .container{
         height: 2000px;
@@ -419,7 +434,18 @@ input{
         font-weight: bold;
 
     }
-
+    .form_login_usuario{
+        display: grid;
+        height: 200px;
+        margin-top: -100px;
+    
+    }
+    #resultado_error{
+        margin-top: 10%;
+        
+    }
+   
+    
 }
 
 /********************************************************FIN: version movil ********************************************/
@@ -458,9 +484,7 @@ input{
         margin-left: 45%;
         margin-top: -15%;
     }
-    /* .menu_navegacion{
-
-    } */
+    
     
 }
 
