@@ -142,6 +142,11 @@ a:hover{
     color: rgb(49 116 55 / 100%);
     /* background-color: aliceblue; */
 }
+#imagen_ayuda{
+    margin-bottom: 10%;
+    margin-left: 28%;
+    box-shadow: 5px 5px 20px green;
+}
 .btn_index{
     color: rgba(255,255,255,0.55);
 }
@@ -171,20 +176,32 @@ a:hover{
 }
 .container_inicio{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: repeat(2,0.75fr 3fr);
     height: 725px;
     margin-top: 125px;
+}
+.barra_lateral{
+    margin-left: -10px;
+    background: #003a55;
     
 }
+.container_lateral{
+    width: 1000px;
+    display: grid;
+    text-align: center;
+    align-items: center;
+}
 table{
+    /* display: grid; */
     width: 700px;
     height: 120px;
     text-align: center;
+    align-items: center;
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
     margin-left: 37%;
-    margin-bottom: 100px;
+    margin-bottom: 50%;
     box-shadow: 2px 2px 20px teal;
 }
 tr{

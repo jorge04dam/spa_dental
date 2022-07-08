@@ -1,7 +1,10 @@
 <div class="container_inicio">
-           
+           <div class="barra_lateral">
+                <h1>barra lateral</h1>
+           </div>
+           <div class="container_lateral">
            <h2>
-           Sesiones activas:
+                Sesiones activas:
            </h2>
            <?php
                $consulta = "SELECT *  FROM `login` where `status` = '1' ";
@@ -10,8 +13,8 @@
                mysqli_select_db($conn, $database);
            
                $datos= mysqli_query($conn, $consulta);
-               ?>
-               <table>
+            ?>
+            <table>
                <!-- <caption>Ejemplo de tabla</caption> -->
                <thead>
                    <tr>
@@ -59,7 +62,9 @@
                    
                </tbody>
            
-           <?php    }
-           ?>
+                <?php    }
+                ?>
            </table>
+           </div>
+           
        </div>

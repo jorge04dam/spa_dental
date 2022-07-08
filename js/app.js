@@ -193,10 +193,10 @@ $('#btn_cancel').click(function(){
         }
     })
  });
-$('.container_inicio').click(function(){
-       setInterval(() => {
+// $('.container_inicio').click(function(){
+//        setInterval(() => {
            
-           window.location.reload('sesiones.php');
-        }, 10000);
+//            window.location.reload('sesiones.php');
+//         }, 10000);
     
-});
+// });
