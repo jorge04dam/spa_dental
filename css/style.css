@@ -12,6 +12,7 @@
     --cardInventario-bg-color:#72beeac5;
     /* --background_image_url: url("img/principal.jpg") */
 }
+
 body{
     
     display: grid;
@@ -89,14 +90,17 @@ body{
     /* gap: 20px; */
     grid-template-columns: repeat(9,auto);
     height: 100px;
-    width: 100%;
+    width: 83%;
     position: fixed;
     z-index: 100;
     background: rgba(255,255,255,0.99);
-    margin-left: -8px;
-    border-radius: 15px;
+    margin-left: 16.5%;
+    /* border-radius: 15px; */
     margin-top: 42px;
     
+}
+#nav-lat{
+    border-bottom: 5px solid white;
 }
 h1{
     text-align: center;
@@ -104,7 +108,9 @@ h1{
 }
 h2{
     text-align: center;
-    color:black;
+    color:white;
+   font-size: 35px;
+    
 }
 .header{
     display: grid;
@@ -113,8 +119,8 @@ h2{
 }
 header{
     display: grid;
-    background-color: #eABE72;
-    width: 100%;
+    background-color: white;
+    width: 83%;
     height: 50px;
     text-align: center;
     align-items: center;
@@ -122,7 +128,7 @@ header{
     position: fixed;
     z-index: 90;
     margin-top: -8px;
-    margin-left: -8px;
+    margin-left: 16.5%;
 }
 .add{
     width:50px;
@@ -179,13 +185,16 @@ a:hover{
 }
 .container_inicio{
     display: grid;
-    grid-template-columns: repeat(2,0.75fr 3fr);
+    grid-template-columns: repeat(5,1fr);
     height: 725px;
     margin-top: 125px;
 }
 .barra_lateral{
-    margin-left: -10px;
-    background: #003a55;
+    margin-left: -9px;
+    margin-top: -57%;
+    background: rgba(138, 190, 114);
+    grid-column-start: 1;
+    grid-column-end: 3;
     
 }
 .container_lateral{
@@ -193,19 +202,20 @@ a:hover{
     display: grid;
     text-align: center;
     align-items: center;
+    grid-column-start: 3;
+    grid-column-end: 5;
 }
 table{
     /* display: grid; */
-    width: 700px;
+    width: 1100px;
     height: 120px;
-    text-align: center;
-    align-items: center;
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
-    margin-left: 37%;
+    margin-left: 1%;
     margin-bottom: 50%;
     box-shadow: 2px 2px 20px teal;
+    
 }
 tr{
     border-radius: 5px;
@@ -284,6 +294,7 @@ tr{
 
 .footer{
     background-color: none;
+    width: 83%;
     display: grid;
     gap: 10px;
     align-items: flex-end;
@@ -292,6 +303,8 @@ tr{
     font-family: sans-serif;
     font-weight: 700;
     font-size: 20px;
+    margin-left: 16.5%;
+    margin-top: -20%;
 }
 
 .containerReport{

@@ -1,32 +1,32 @@
 <div class="container_inicio">
            <div class="barra_lateral">
-                <h1>barra lateral</h1>
+                <h1 id="nav-lat">Spa Dental Lindavista</h1>
            </div>
            <div class="container_lateral">
-           <h2>
-                Sesiones activas:
-           </h2>
-           <?php
-               $consulta = "SELECT *  FROM `login` where `status` = '1' ";
-               // WHERE `nickname` = '$nom'
+                <h2>
+                    Sesiones activas:
+                </h2>
+                <?php
+                    $consulta = "SELECT *  FROM `login` where `status` = '1' ";
+                    // WHERE `nickname` = '$nom'
 
-               mysqli_select_db($conn, $database);
+                    mysqli_select_db($conn, $database);
            
-               $datos= mysqli_query($conn, $consulta);
-            ?>
-            <table>
-               <!-- <caption>Ejemplo de tabla</caption> -->
-               <thead>
-                   <tr>
-                       <th>Id</th>
-                       <th>Nombre</th>
-                       <th>Usuario</th>
-                       <th>Estado</th>
-                       <th>Cargo</th>
-                   </tr>
-               </thead>
+                    $datos= mysqli_query($conn, $consulta);
+                ?>
+                <table>
+                    <!-- <caption>Ejemplo de tabla</caption> -->
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Estado</th>
+                            <th>Cargo</th>
+                        </tr>
+                    </thead>
                <?php
-               while ($fila = mysqli_fetch_array($datos)){
+                    while ($fila = mysqli_fetch_array($datos)){
                    // echo "<p>";
                    // echo $fila ["id"];
                    // echo "-"; // un separador
@@ -39,8 +39,8 @@
                    // echo "los datos son correctos";
                    ?>
                   
-               <tbody>
-                   <tr>
+                <tbody>
+                    <tr>
                        <td><?php echo $fila ["id"];  ?></td>
                        <td><?php echo $fila ["name"];  ?></td>
                        <td><?php echo $fila ["nickname"];  ?></td>
@@ -58,9 +58,9 @@
                        echo "Recepción"; 
                        } ?>
                        </td>
-                   </tr>
+                    </tr>
                    
-               </tbody>
+                </tbody>
            
                 <?php    }
                 ?>
