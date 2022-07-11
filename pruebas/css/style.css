@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor_principal{
+    display: grid;
+    background-color: transparent;
+    /* width: 1000px;
+    height: 900px; */
+}
+.header{
+   
+    background-color: transparent;
+    /* width: 800px; */
+    min-height: 900px;
+    display: grid;
+    grid-template-columns: repeat(15,auto);
+    grid-template-rows: repeat(10,auto);
+}
+.barra1{
+    display: grid;
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 11;
+}
+.barra2{
+    display: grid;
+    background-color: rgba(138, 190, 114, 0.9);;
+    grid-column-start: 2;
+    grid-column-end: 16;
+    height: 100px;
+    margin-left: -110px;
+}
+.contenedor_secundario{
+    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../../img/sonrisa_feliz.jpg") 
+        no-repeat center center fixed;
+    background-size: cover;
+    grid-column-start: 2;
+    grid-column-end: 16;
+    grid-row-start: 2;
+    grid-row-end: 11;
+    /* width: 500px;
+    height: 500px; */
+}

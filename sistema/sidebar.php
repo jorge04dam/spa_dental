@@ -228,7 +228,7 @@
     <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
     <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
 </div> -->
-
+<a id="usuario_sesion">Cerrar Sesion</a>
 </ul>
 <!-- End of Sidebar -->
 
@@ -242,7 +242,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
-
+    <?php include '../include/library_js.php';  ?>
     <!-- Page level plugins -->
     <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
 
