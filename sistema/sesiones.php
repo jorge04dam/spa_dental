@@ -1,6 +1,8 @@
 <div class="container_inicio">
            <div class="barra_lateral">
                 <h1 id="nav-lat">Spa Dental Lindavista</h1>
+                <?php //include 'sidebar.php'; ?>
+                
            </div>
            <div class="container_lateral">
                 <h2>

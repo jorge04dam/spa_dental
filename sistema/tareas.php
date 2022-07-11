@@ -6,11 +6,20 @@
             header('location: ../sistema/Bienvenida_admin.php');
         }
         include '../include/header.php';
-    ?>
-    
-        <div class="container">
         
-        <div class="pendientes" id="tareas">
+    ?>
+        
+     
+
+    <div class="container_inicio">
+        <div class="barra_lateral">
+            <h1 id="nav-lat">Spa Dental Lindavista</h1>
+            <?php //include 'sidebar.php'; ?>
+                
+        </div>
+        <div class="container_lateral">
+        
+            <div class="pendientes" id="tareas">
             <div class="cardTarea" id="cardRealizado cardTareas">Seguimiento a</div>
             <div class="cardTarea" id="cardRealizado cardTareas">Tarea 2</div>
             <div class="cardTarea" id="cardRealizado cardTareas">Tarea 3</div>
@@ -22,6 +31,9 @@
            
         </div>
         <hr>
+                
+    </div>
+           
         
         
     </div>

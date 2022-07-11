@@ -52,7 +52,7 @@
         <a href="../sistema/tareas.php">Tablero de pendientes</a>
         <a href="../sistema/reportes.php">Reportes</a>
         <a href="../sistema/consultas.php">Consultas</a>
-        <a href="../sistema/agregar.php">Agregar</a>
+        <a href="../sistema/sidebar.php">Agregar</a>
         <a <?php 
         if($_SESSION['cargo'] == 1){?>
         href="../sistema/inventario.php"<?php

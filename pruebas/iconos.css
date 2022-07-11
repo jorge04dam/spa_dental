@@ -1,0 +1,8 @@
+.iconos{
+    display: grid;
+    grid-template-columns: repeat(10,auto);
+    row-gap: 10px;
+}
+.iconos div:hover{
+    background: rgba(222,15,58, 1);
+}
