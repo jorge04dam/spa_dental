@@ -1,3 +1,4 @@
+<!-- <body id="page-top" class="sidebar-toggled"> -->
 <div class="container_inicio">
            <div class="barra_lateral">
                 <h1 id="nav-lat">Spa Dental Lindavista</h1>
@@ -70,3 +71,4 @@
            </div>
            
        </div>
+<!-- </body> -->
