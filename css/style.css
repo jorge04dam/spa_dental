@@ -16,9 +16,9 @@
 body{
     
     display: grid;
-    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
+    /* background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
-    background-size: cover; 
+    background-size: cover;  */
     height: 900px;
    
 }
@@ -112,11 +112,11 @@ h2{
    font-size: 35px;
     
 }
-.header{
+/* .header{
     display: grid;
     gap: 2px;
     grid-template-columns: auto auto;
-}
+} */
 header{
     display: grid;
     background-color: transparent;

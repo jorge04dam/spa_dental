@@ -10,8 +10,9 @@
             <!-- Buscar    Nombre del usuario    Fecha    Tipo de usuario -->
             <?php include '../include/header.php';  ?>
         </div>
-    </div>
-    <div class="contenedor_secundarioo">
+        <div class="contenedor_secundario">
             Contenido de la pagina
     </div>
+    </div>
+    
 </div>
