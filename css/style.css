@@ -16,9 +16,9 @@
 body{
     
     display: grid;
-    /* background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
+    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
-    background-size: cover;  */
+    background-size: cover; 
     height: 900px;
    
 }
@@ -253,6 +253,10 @@ tr{
     border-radius: 5px;
     background-color: aliceblue;
 }
+td{
+    border: 1px solid red;
+}
+
 .form_login_usuario{
     display: grid;
     height: 200px;

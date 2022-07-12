@@ -1,0 +1,6 @@
+Ejemplo para crear una vista
+CREATE VIEW 
+vista_futbolistas AS 
+SELECT futbolistas.id, nombre, apellidos FROM futbolistas
+INNER JOIN tarjetas_amarillas 
+ON futbolistas.id = tarjetas_amarillas.id_futbolista;
