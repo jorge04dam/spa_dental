@@ -1,8 +1,8 @@
 
  <link href="../css/all.min.css" rel="stylesheet" type="text/css">
-    <link
+    <!-- <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+        rel="stylesheet"> -->
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 <!-- Nombre de la primera seccion -->
 <li class="nav-item active">
     <a class="nav-link" href="index.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
         <span>Tablero</span></a>
 </li>
 
@@ -43,7 +43,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
+        <!-- <i class="fas fa-fw fa-cog"></i> -->
         <span>Orden del día</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -65,7 +65,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
+        <!-- <i class="fas fa-fw fa-cog"></i> -->
         <span>Nota medica</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -84,7 +84,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
+        <!-- <i class="fas fa-fw fa-wrench"></i> -->
         <span>Nota de evolucion</span>
     </a>
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -103,7 +103,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
+        <!-- <i class="fas fa-fw fa-wrench"></i> -->
         <span>Expediente</span>
     </a>
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -132,7 +132,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
+        <!-- <i class="fas fa-fw fa-cog"></i> -->
         <span>Buscar</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -151,7 +151,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
+        <!-- <i class="fas fa-fw fa-wrench"></i> -->
         <span>Utilities</span>
     </a>
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -180,7 +180,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
         aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
+        <!-- <i class="fas fa-fw fa-folder"></i> -->
         <span>Pages</span>
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -239,6 +239,6 @@
     <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
 
     <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.js"></script>
     <?php include '../include/library_js.php';  ?>
    

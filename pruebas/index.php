@@ -19,12 +19,18 @@
 <body class="grid-container">
   
   <header class="header">
-    <input type="text" placeholder="Buscar.." id="busqueda">
-    <?php echo $_SESSION['cargo']==1 ? 'Administrador': 'Recepcion'; ?>
+    <div class="buscar">
+        <input type="text" placeholder="Buscar.." id="busqueda">
+        <input type="button" value="Buscar" class="btn_buscar">
+    </div>
+    <h2 id="cargo"><?php echo $_SESSION['cargo']==1 ? 'Administrador': 'Recepcion'; ?></h2>
   </header>
-  <nav class="navbar">
-  <?php include '../sistema/sidebar.php';?>
-  </nav>
+
+
+
+  <!-- <nav class="navbar"> -->
+  <?php //include '../sistema/sidebar.php';?>
+  <!-- </nav> -->
   <aside class="sidebar">
    <?php include '../sistema/sidebar.php';?>
   </aside>
@@ -33,6 +39,20 @@
     <?php 
     include '../servidor/connect.php';
     include '../sistema/sesiones.php'; ?>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <hr>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <hr>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <hr>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <hr>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <hr>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus alias eum commodi necessitatibus, deserunt aut rerum maxime ullam quod. Molestiae voluptatum quo possimus in reprehenderit ipsa, cupiditate dolores accusamus explicabo.</h1>
+    <hr>
   </article>
   <footer class="footer">
         <h2>Spa dental lindavista 2022</h2>

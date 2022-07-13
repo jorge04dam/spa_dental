@@ -16,9 +16,10 @@
 body{
     
     display: grid;
-    background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
-        no-repeat center center fixed;
-    background-size: cover; 
+    /* background: linear-gradient(rgba(138, 190, 114, 0.3),rgba(138, 190, 114, 0.3)),url("../img/sonrisa_feliz.jpg") 
+        no-repeat center center fixed; */
+    background-image: linear-gradient(90deg, #13855c 10%, #224abe 100%);
+    /* background-size: cover;  */
     height: 900px;
    
 }
@@ -172,7 +173,7 @@ a{
     display: grid;
     align-items: center;
     justify-items: center;
-    border-right: 1px solid rgba(153, 119, 51, 0.825);
+    /* border-right: 1px solid rgba(153, 119, 51, 0.825); */
     
 }
 a:hover{
@@ -502,9 +503,9 @@ input{
 @media screen and (max-width: 1600px){
     body{
         height: 615px;
-        background: linear-gradient(rgba(49, 116, 55, 0.4  ),rgba(49, 116, 55, 0.3)),url("../img/sonrisa_feliz.jpg") 
+        /* background: linear-gradient(rgba(49, 116, 55, 0.4  ),rgba(49, 116, 55, 0.3)),url("../img/sonrisa_feliz.jpg") 
         no-repeat center center fixed;
-        background-size: cover;
+        background-size: cover; */
         margin-top: 0px;
     }
     

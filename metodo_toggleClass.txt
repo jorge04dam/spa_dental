@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/lib/jquery-1.12.2.min.js"></script>
+<script>
+$(document).ready(function(){
+al presionar el boton se manada a llamar a la funcion. 
+    $("button").click(function(){
+	La funcion se encarga de agregar una clase llamada main a los elementos p usando el metodo toggleClass.
+        $("p").toggleClass("main");
+    });
+});
+</script>
+<style>
+.main {
+    font-size: 120%;
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<button>Toggle class "main" for p elements</button>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<p><b>Note:</b> Click the button more than once to see the toggle effect.</p>
+
+</body>
+</html>
