@@ -18,7 +18,10 @@
 
 <body class="grid-container">
   
-  <header class="header">HEADER</header>
+  <header class="header">
+    <input type="text" placeholder="Buscar.." id="busqueda">
+    <?php echo $_SESSION['cargo']==1 ? 'Administrador': 'Recepcion'; ?>
+  </header>
   <nav class="navbar">
   <?php include '../sistema/sidebar.php';?>
   </nav>
@@ -26,53 +29,13 @@
    <?php include '../sistema/sidebar.php';?>
   </aside>
   <article class="main">
-    <!-- <h2>Usuarios activos del sistema</h2> -->
-    <!-- <table>
-        <thead>
-            <th>nombre usuario</th>
-            <th>cargo</th>
-            <th>estado</th>
-            <th>fecha</th>
-        </thead>
-        <tbody>
-            <tr>
-            <th>jorgedam</th>
-            <th>administrador</th>
-            <th>activo</th>
-            <th>12/07/2022</th>
-            </tr>
-            <tr>
-            <th>jorgedam</th>
-            <th>administrador</th>
-            <th>activo</th>
-            <th>12/07/2022</th>
-            </tr>
-            <tr>
-            <th>jorgedam</th>
-            <th>administrador</th>
-            <th>activo</th>
-            <th>12/07/2022</th>
-            </tr>
-            <tr>
-            <th>jorgedam</th>
-            <th>administrador</th>
-            <th>activo</th>
-            <th>12/07/2022</th>
-            </tr>
-            <tr>
-            <th>jorgedam</th>
-            <th>administrador</th>
-            <th>activo</th>
-            <th>12/07/2022</th>
-            </tr>
-        </tbody>
-    </table> -->
+    
     <?php 
     include '../servidor/connect.php';
     include '../sistema/sesiones.php'; ?>
   </article>
   <footer class="footer">
-        <h2>FOOTER</h2>
+        <h2>Spa dental lindavista 2022</h2>
 </footer>
 </body>
 </html>

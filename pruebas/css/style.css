@@ -68,17 +68,19 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  
 }
 
 html {
   height: 100%;
+  
 }
 
 body {
   font-family: "Public Sans", sans-serif;
   font-size: 1.2rem;
   min-height: 100%;
+  
 }
 
 .grid-container > * {
@@ -93,14 +95,19 @@ body {
   background-image: linear-gradient(90deg, #13855c 10%, #224abe 100%);
   position: fixed;
   z-index: 100;
-  width: 100%;
-  height: 10%;
+  width: 69%;
+  height: 8%;
+  /* margin: 0 auto; */
+  margin-left: 210px;
+  color: white;
+  
 }
 
 .navbar {
   grid-area: navbar;
   background-color: #afd6af;
   padding: 0;
+  margin-right: 10px;
 }
 
 .sidebar {
@@ -119,7 +126,7 @@ body {
 
 .footer {
   grid-area: footer;
-  background-color: #8c96a0;
+  background-color: #13855c ;
   color: white;
 }
 
@@ -156,7 +163,7 @@ body {
 @media (min-width: 900px) {
   .grid-container {
     grid-template:
-      "header  header header"  100px
+      "sidebar  header navbar"  30px
       "sidebar  main   navbar" auto
       "footer  footer footer"  100px /
       200px    auto   200px;
@@ -171,7 +178,27 @@ a{
 table{
     width: 100%;
     background-color: white;
+    border: 1px solid black;
+}
+tr{
+    border: 1px solid rebeccapurple;
 }
 th{
     border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+}
+#busqueda{
+    width: 30%;
+    padding-left: 30px;
+    border-radius: 10px;
+    margin-right: 450px;
+}
+#usuario_sesion{
+    color: rgba(255, 255, 255, 0.3);
+}
+#usuario_sesion:focus, #usuario_sesion:hover{
+    cursor: pointer;
+    color: white;
 }
