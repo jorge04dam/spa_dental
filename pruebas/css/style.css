@@ -233,3 +233,22 @@ td{
 #cargo{
   margin-top: 15px;
 }
+.add{
+  width: 85px;
+  height: 85px;
+  position: fixed;
+  z-index: 100;
+  margin-top: 40%;
+  margin-left: 90%;
+  border-radius: 25px;
+  background-color: rgba(49, 116, 55, 0.75);
+
+}
+.add:hover{
+  background-color: rgb(16, 102, 49);
+  cursor: pointer;
+}
+.add img{
+  width: 75px;
+  height: 75px;
+}

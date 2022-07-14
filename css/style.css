@@ -100,9 +100,9 @@ body{
     margin-top: 70px;
     
 }
-#nav-lat{
+/* #nav-lat{
     border-bottom: 5px solid white;
-}
+} */
 h1{
     text-align: center;
     color:#fff
@@ -118,7 +118,7 @@ h2{
     gap: 2px;
     grid-template-columns: auto auto;
 } */
-header{
+/* header{
     display: grid;
     background-color: transparent;
     width: 83%;
@@ -129,10 +129,10 @@ header{
     position: fixed;
     z-index: 90;
     margin-top: -8px;
-    margin-left: 5%;
+    margin-left: 5%; */
     /* margin-bottom: -100px; */
   
-}
+/* } */
 
 .span{
     width: 250px;
@@ -145,14 +145,14 @@ header{
     
 }
 
-#buscador{
+/* #buscador{
     width: 300px;
     height: 40px;
     box-shadow: 1px 1px 10px black;
     outline: none;
     padding-top: -80px;
     position: absolute;
-}
+} */
 #buscar-ico{
     width: 30px;
     position: relative;
@@ -219,28 +219,28 @@ a:hover{
     height: 725px;
     margin-top: 125px;
 }
-.barra_lateral{
+/* .barra_lateral{ */
     /* display: block; */
     /* width: 100%; */
-    min-width: 230px;
+    /* min-width: 230px;
     margin-left: -9px;
     margin-top: -57%;
-    background: rgba(138, 190, 114);
+    background: rgba(138, 190, 114); */
     /* grid-column-start: 1;
     grid-column-end: 3; */
     
-}
-.container_lateral{
+/* } */
+/* .container_lateral{
     width: 1000px;
     display: grid;
     text-align: center;
     align-items: center;
     grid-column-start: 3;
     grid-column-end: 5;
-}
-table{
+} */
+/* table{ */
     /* display: grid; */
-    width: 1100px;
+    /* width: 1100px;
     height: 120px;
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -256,7 +256,7 @@ tr{
 }
 td{
     border: 1px solid red;
-}
+} */
 
 .form_login_usuario{
     display: grid;
@@ -329,7 +329,7 @@ td{
     height: 75px;
 }
 
-.footer{
+/* .footer{
     background-color: none;
     width: 83%;
     display: grid;
@@ -342,7 +342,7 @@ td{
     font-size: 20px;
     margin-left: 16.5%;
     margin-top: -20%;
-}
+} */
 
 .containerReport{
     display: grid;
@@ -361,7 +361,7 @@ form {
     align-items: center;
     justify-items: center;
 }
-input{
+/* input{
     display: grid;
     width: 315px;
     height: 65px;
@@ -371,7 +371,7 @@ input{
     margin: 10px 0; 
     background: rgba(255, 255, 255, 0.5);
     font-size: 25px;
-}
+} */
 #position_select{
     display: grid;
     width: 315px;
@@ -425,9 +425,9 @@ input{
         /* background: linear-gradient(to top, white, #8d0b32); */
         
     }
-    header{
+    /* header{
         width: 100%;
-    }
+    } */
     .container{
         height: 2000px;
         margin-top: 10px;
@@ -556,9 +556,9 @@ input{
     .pendientes{
         margin-top: 50px;
     }
-    .footer{
+    /* .footer{
         margin-bottom: 2000px;
-    }
+    } */
     /* .barra_lateral{
         width: 280px;
     } */

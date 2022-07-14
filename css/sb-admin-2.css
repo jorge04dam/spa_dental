@@ -2971,7 +2971,10 @@ input[type="button"].btn-block {
 }
 
 .collapse:not(.show) {
-  display: none;
+    display: none;
+}
+.prueba:not(.show){
+  display:none;
 }
 
 .collapsing {
