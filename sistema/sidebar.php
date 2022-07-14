@@ -239,6 +239,6 @@
     <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
 
     <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.js"></script>
-    <?php include '../include/library_js.php';  ?>
+    <!-- <script src="../js/sb-admin-2.js"></script> -->
+    <?php //include '../include/library_js.php';  ?>
    

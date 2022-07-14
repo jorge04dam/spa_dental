@@ -96,6 +96,7 @@ $('#btn_cancel').click(function(){
     $('#cargando').show();
     $('#con_resp').show();
     $('#con_resp').html("");
+    alert("validar captura");
     $('#con_resp').append("<div id='resultado_ok'></div>");
  
     $('#resultado_ok').html("Creando usuario...");
@@ -193,10 +194,19 @@ $('#btn_cancel').click(function(){
         }
     })
  });
-// $('.container_inicio').click(function(){
-//        setInterval(() => {
-           
-//            window.location.reload('sesiones.php');
-//         }, 10000);
-    
-// });
+
+$('.btn_buscar').click(function(){
+    // alert('buscando');
+    $('#cargando').show();
+	$('#resultado').html("Cargado....")
+	setTimeout(() => {
+		$.post('../servidor/buscar.php',{
+			busqueda: 	$('#busqueda').val()
+		},function(info,estado){
+			console.log(info);
+		})
+
+		$('#cargando').hide();
+		$('#resultado').html("")
+	}, 3000);
+});
