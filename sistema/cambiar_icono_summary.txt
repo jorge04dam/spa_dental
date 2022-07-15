@@ -1,0 +1,11 @@
+Para cambiar el icono indicador se emplea el selector after o before:
+
+    details summary:before {
+        display: inline-block;
+        width: 32px;
+        height: 18px;
+        margin-right: 8px;
+        content: "";
+        float:left;
+        background-image: url(navigation_collapse.png);
+    }

@@ -13,9 +13,13 @@
     <?php
         include '../include/header.php';
         include '../include/sidebar.php';
-        include '../include/main.php';
+        // include '../include/main.php';
     ?>
-<!-- <div class="pendientes" id="tareas">
+
+    <article class="main">
+        <br><br>
+        <h2 style="color:blue">hola tablero</h2>
+        <div class="pendientes" id="tareas">
             <div class="cardTarea" id="cardRealizado cardTareas">Seguimiento a</div>
             <div class="cardTarea" id="cardRealizado cardTareas">Tarea 2</div>
             <div class="cardTarea" id="cardRealizado cardTareas">Tarea 3</div>
@@ -25,7 +29,18 @@
             <div class="cardTarea" id="cardPendiente cardTareas">Tarea 3</div>
             <div class="cardTarea" id="cardPendiente cardTareas">Tarea 4</div>
                   
-    </div>     -->
+        </div>    
+
+        <?php
+            include '../servidor/buscar.php';
+        ?>
+
+
+
+
+
+
+    </article>
         
    
     <div class="add">

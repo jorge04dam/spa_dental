@@ -1,37 +1,41 @@
 <link rel="stylesheet" href="css/siderbar-prueba.css">
 <body>
 <ul>
+    
+    <br>
     <li>
-        <a href="#" >
-            <span>Nav 1</span>
-        </a>
-        <div>
-            <h5>Sub Nav 1</h5>
-            <a href="#">Sub Nav 1.2</a>
-            <a href="#">Sub Nav 1.2</a>
-        </div>
+        <details>
+            <summary class="separacion">
+                Recepción
+            </summary> 
+            <a href="#" class="separacion sub-separacion">Tablero del día</a>
+            <a href="#" class="separacion sub-separacion">Mensajes</a>
+        </details>
+        
     </li>
     <hr>
     <li>
-        <a href="#">
-            <span>Nav 2</span>
-        </a>
-        <div>
-            <h5>Sub Nav 2</h5>
-            <a href="#">Sub Nav 2.1</a>
-            <a href="#">Sub Nav 2.2</a>
-        </div>
+        <details>
+            <summary class="separacion">
+                Paciente
+            </summary> 
+            <a href="#" class="separacion sub-separacion">Nota medica</a>
+            <a href="#" class="separacion sub-separacion">Expediente</a>
+        </details>
+        
     </li>
     <hr>
     <li>
-        <a href="#">
-            <span>Nav 3</span>
-        </a>
-        <div>
-            <h5>Sub Nav 1</h5>
-            <a href="#">Sub Nav 3.1</a>
-            <a href="#">Sub Nav 3.2</a>
-        </div>
+        <details>
+            <summary class="separacion">
+                Doctor
+            </summary> 
+            <a href="#" class="separacion sub-separacion">Actividad</a>
+            <a href="#" class="separacion sub-separacion">Reporte</a>
+        </details>
+        
     </li>
+    <hr>
+    
 </ul>
 </body>

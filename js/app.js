@@ -27,7 +27,7 @@ $('#btn_ini').click(function(){
                     window.location.replace('bienvenida.php');
 
                 }else if(info == "iniciando_sesion_recep"){
-                    window.location.replace('tareas.php');
+                    window.location.replace('tablero.php');
                
                 }
                 else if(info == "sesion_iniciada"){
@@ -204,6 +204,9 @@ $('.btn_buscar').click(function(){
 			busqueda: 	$('#busqueda').val()
 		},function(info,estado){
 			console.log(info);
+            // if(info == "ok"){
+            //     window.location.replace("");
+            // }
 		})
 
 		$('#cargando').hide();

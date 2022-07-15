@@ -252,3 +252,44 @@ td{
   width: 75px;
   height: 75px;
 }
+.pendientes, .reportes, .consultas, .agregar, .inventario{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, auto);
+  height: 500px;
+}
+.cardTarea{
+  background-color: var(--cardTareas-bg-color);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border: solid 1px;
+  border-radius: 25px;
+  height: 200px;
+}
+
+.cardReportes{
+  background-color: var(--cardReportes-bg-color);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.cardConsultas{
+  background-color: var(--cardConsultas-bg-color);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.cardAgregar{
+  background-color: var(--cardAgregar-bg-color);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.cardInventario{
+  background-color: var(--cardInventario-bg-color);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  
+}
