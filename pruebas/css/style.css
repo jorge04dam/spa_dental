@@ -115,8 +115,9 @@ body {
 
 .sidebar {
   grid-area: sidebar;
-  background-color: #13855c ;
+  background: #13855c;
   padding: 0;
+  background-size: cover;
 }
 
 .main {
@@ -131,17 +132,20 @@ body {
   grid-area: footer;
   background-color: #13855c ;
   color: white;
+  width: 84%;
+  margin-left: 210px;
 }
 
 .grid-container {
   display: grid;
   gap: 10px;
   grid-template:
-    "header"  100px
-    "sidebar"  50px
+    "header"  auto
+    "sidebar" auto
     "main"    auto
     /* "navbar" 100px */
-    "footer"  100px;
+    "footer"  auto;
+  /* height: auto; */
 }
 
 @media (min-width: 600px) {
