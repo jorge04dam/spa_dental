@@ -19,11 +19,11 @@
 
         while ($file = mysqli_fetch_array($datos, MYSQLI_ASSOC)) {
             // var_dump($file);
-            $jsonn = json_encode($file);
+            echo $file['name'] . "<br>";
             
         }
 
-        var_dump($jsonn);
+       
         
         
 ?>

@@ -197,19 +197,43 @@ $('#btn_cancel').click(function(){
 
 $('.btn_buscar').click(function(){
     // alert('buscando');
-    $('#cargando').show();
-	$('#resultado').html("Cargado....")
-	setTimeout(() => {
-		$.post('../servidor/buscar.php',{
-			busqueda: 	$('#busqueda').val()
-		},function(info,estado){
-			console.log(info);
-            // if(info == "ok"){
-            //     window.location.replace("");
-            // }
-		})
+    let parametros = {
+        "busqueda": $('#busqueda').val()
+    };
+    $.ajax({
+        data:   parametros,
+        url:    '../servidor/buscar.php',
+        type:   'post',
 
-		$('#cargando').hide();
-		$('#resultado').html("")
-	}, 3000);
+        beforesend: function(){
+            $('#resultado').html('Buscando...');
+            console.log('antes del success');
+        },
+        success: function(mensaje){
+            $('#resultado').html(mensaje);
+            console.log('success');
+            console.log(mensaje);
+        }
+    });
+	
+	
 });
+
+// $('.btn_buscar').click(function(){
+//     // alert('buscando');
+//     $('#cargando').show();
+// 	$('#resultado').html("Cargado....")
+// 	setTimeout(() => {
+// 		$.post('../servidor/buscar.php',{
+// 			busqueda: 	$('#busqueda').val()
+// 		},function(info,estado){
+// 			console.log(info);
+//             // if(info == "ok"){
+//             //     window.location.replace("");
+//             // }
+// 		})
+
+// 		$('#cargando').hide();
+// 		$('#resultado').html("")
+// 	}, 3000);
+// });
