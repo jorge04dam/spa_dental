@@ -7,7 +7,8 @@
         <details>
             <summary class="separacion">
                 Administrador
-            </summary> 
+            </summary>
+            <a href="bienvenida.php" class="separacion sub-separacion">Inicio</a> 
             <a href="#" class="separacion sub-separacion">Ver usuarios</a>
             <a href="#" class="separacion sub-separacion">Crear usuario</a>
             
@@ -56,7 +57,7 @@
                 Inventario
             </summary> 
             <a href="#" class="separacion sub-separacion">Agregar</a>
-            <a href="#" class="separacion sub-separacion">Movimientos</a>
+            <a href="inventario.php" class="separacion sub-separacion">Movimientos</a>
         </details>
         
     </li>

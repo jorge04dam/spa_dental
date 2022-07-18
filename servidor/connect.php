@@ -11,5 +11,11 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+/*
+    Asignacion de cada base de datos
+*/
+$table_patient     = "patient_prueba";
+$table_doctor      = "doctor";
+$table_inventory   = "inventory";
 
 ?>

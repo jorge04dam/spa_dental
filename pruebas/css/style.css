@@ -200,6 +200,7 @@ th{
 }
 td{
     border: 1px solid black;
+    text-align: center;
 }
 #busqueda{
     /* width: 40%; */
@@ -297,4 +298,7 @@ td{
   align-items: center;
   justify-items: center;
   
+}
+.sesiones_activas{
+  border: 1px solid black;
 }

@@ -195,10 +195,11 @@ $('#btn_cancel').click(function(){
     })
  });
 
-$('.btn_buscar').click(function(){
+$('#buscar_paciente').click(function(){
     // alert('buscando');
     let parametros = {
-        "busqueda": $('#busqueda').val()
+        "busqueda": $('#busqueda').val(),
+        "accion":   "1"
     };
     $.ajax({
         data:   parametros,
@@ -219,6 +220,55 @@ $('.btn_buscar').click(function(){
 	
 	
 });
+
+$('#buscar_inventario').click(function(){
+    // alert('buscando');
+    let parametros = {
+        "busqueda": $('#busqueda').val(),
+        "accion"  : "3"
+    };
+    $.ajax({
+        data:   parametros,
+        url:    '../servidor/buscar.php',
+        type:   'post',
+
+        beforesend: function(){
+            $('#resultado').html('Buscando...');
+            console.log('antes del success');
+        },
+        success: function(mensaje){
+            $('#resultado').html(mensaje);
+            $('#resultado').show();
+            // console.log('success');
+            console.log(mensaje);
+        }
+    });
+	
+	
+});
+/**vuscador dinamico con solo el input */
+function buscar(){
+    let parametros = {
+        "busqueda": $('#busqueda').val(),
+        "accion":   "0"
+    };
+    $.ajax({
+        data:   parametros,
+        url:    '../servidor/buscar.php',
+        type:   'post',
+
+        beforesend: function(){
+            $('#resultado').html('Buscando...');
+            console.log('antes del success');
+        },
+        success: function(mensaje){
+            $('#resultado').html(mensaje);
+            $('#resultado').show();
+            // console.log('success');
+            console.log(mensaje);
+        }
+    });
+}
 
 // $('.btn_buscar').click(function(){
 //     // alert('buscando');

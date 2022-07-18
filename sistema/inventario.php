@@ -1,18 +1,36 @@
-<?php
-	session_start();
-    //se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
-    //¿no Hay una sesion activa o iniciada?
-        if(empty($_SESSION['active'])){
-            header('location: ../sistema/Bienvenida_admin.php');
-        }
-        include '../include/header.php';
-?>
-<div class="container">
-	<h1>Bienvenido al apartado de inventario. <hr>
-    Aquí se podra visualizar la contabilidad de los insumos existentes.
-    </h1>
-</div>
-	
-<?php include '../include/library_js.php'; ?>
+<?php 
+        // inicio el metodo global para iniciar una session
+        session_start();
+        //se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
+        //¿no Hay una sesion activa o iniciada?
+       if(empty($_SESSION['active'])){
+           header('location: ../sistema/bienvenida.php');
+       }
+       include '../servidor/connect.php';
+       include '../include/library_css.php';
+    ?> 
+       <body class="grid-container">
+            <?php 
+                include '../include/header.php';
+                include '../include/sidebar.php';
+                // include '../include/main.php';
+            ?>
+            <article class="main">
+                <br><br>
+                <div id="resultado">
 
-<?php include '../include/footer.php'; ?>
+                </div>
+            </article>
+
+
+            <?php
+                include '../include/footer.php'; 
+            ?> 
+            
+        </body>  
+       
+    <?php 
+    include '../include/library_js.php'; 
+    
+    ?>
+    

@@ -17,15 +17,15 @@
            
                     $datos= mysqli_query($conn, $consulta);
                 ?>
-                <table>
+                <table class="sesiones_activas">
                     <!-- <caption>Ejemplo de tabla</caption> -->
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Usuario</th>
-                            <th>Estado</th>
-                            <th>Cargo</th>
+                            <th class="sesiones_activas">Id</th>
+                            <th class="sesiones_activas">Nombre</th>
+                            <th class="sesiones_activas">Usuario</th>
+                            <th class="sesiones_activas">Estado</th>
+                            <th class="sesiones_activas">Cargo</th>
                         </tr>
                     </thead>
                <?php
