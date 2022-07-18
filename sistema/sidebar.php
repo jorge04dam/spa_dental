@@ -5,6 +5,17 @@
     <li>
         <details>
             <summary class="separacion">
+                Usuarios
+            </summary> 
+            <a href="#" class="separacion sub-separacion">Ver usuarios</a>
+            <a href="#" class="separacion sub-separacion">Crear usuario</a>
+        </details>
+        
+    </li>
+    <hr>
+    <li>
+        <details>
+            <summary class="separacion">
                 Recepción
             </summary> 
             <a href="tablero.php" class="separacion sub-separacion">Tablero del día</a>

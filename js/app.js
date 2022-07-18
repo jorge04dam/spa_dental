@@ -211,7 +211,8 @@ $('.btn_buscar').click(function(){
         },
         success: function(mensaje){
             $('#resultado').html(mensaje);
-            console.log('success');
+            $('#resultado').show();
+            // console.log('success');
             console.log(mensaje);
         }
     });

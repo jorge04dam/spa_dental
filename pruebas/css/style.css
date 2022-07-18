@@ -183,7 +183,7 @@ a{
 /************************termina ejempo***********************************************/
 .buscar{
     display: grid;
-    grid-template-columns: repeat(2,40% 30%);
+    grid-template-columns: repeat(6,auto);
     gap: 10%;
 }
 table{
@@ -195,7 +195,8 @@ tr{
     border: 1px solid rebeccapurple;
 }
 th{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    text-align: center;
 }
 td{
     border: 1px solid black;

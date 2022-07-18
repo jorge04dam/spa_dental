@@ -16,7 +16,6 @@
                 include '../include/main.php';
                 include '../include/footer.php'; 
             ?> 
-            <div id="cargando"><img src="../img/pulso.gif" alt=""></div>    
             
         </body>  
        
