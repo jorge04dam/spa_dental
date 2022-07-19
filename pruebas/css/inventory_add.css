@@ -1,0 +1,14 @@
+#inventory_add{
+    display: grid;
+    width: 60%;
+    height: 20%;
+    grid-template-columns: repeat(5, auto);
+    gap: 5%;
+    row-gap: 20%;
+    background-color: red;
+}
+#inventory_add input, #inventory_add select{
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    text-align: center;
+}

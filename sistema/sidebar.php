@@ -56,8 +56,8 @@
             <summary class="separacion">
                 Inventario
             </summary> 
-            <a href="#" class="separacion sub-separacion">Agregar</a>
-            <a href="inventario.php" class="separacion sub-separacion">Movimientos</a>
+            <a href="inventario.php" id="agregar_inventario" class="separacion sub-separacion">Agregar</a>
+            <a href="inventario.php" id="movimientos_inventario" class="separacion sub-separacion">Movimientos</a>
         </details>
         
     </li>

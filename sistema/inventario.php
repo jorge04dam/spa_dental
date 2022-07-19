@@ -17,8 +17,9 @@
             ?>
             <article class="main">
                 <br><br>
+                <h1 style = "color:white">Inventario</h1>
                 <div id="resultado">
-
+                    
                 </div>
             </article>
 
