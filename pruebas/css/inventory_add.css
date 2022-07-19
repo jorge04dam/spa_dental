@@ -1,7 +1,7 @@
 #inventory_add{
     display: grid;
     width: 60%;
-    height: 20%;
+    height: 30%;
     grid-template-columns: repeat(5, auto);
     gap: 5%;
     row-gap: 20%;
@@ -11,4 +11,11 @@
     border-radius: 10px;
     box-shadow: 1px 1px 5px black;
     text-align: center;
+    width: 100%;
+}
+#btn_guardar_insumo{
+    background-color: rgba(200, 100, 100, 0.5);
+}
+#btn_guardar_insumo:hover{
+    background-color: rgba(200, 100, 100, 1);
 }
