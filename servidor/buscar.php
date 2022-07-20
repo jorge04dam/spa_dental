@@ -29,7 +29,7 @@
         
         if($_POST['accion'] == "1"){
             // $tabla = $table_patient;
-            $consulta = "SELECT * FROM `$tabla` where `name` LIKE '%$busqueda%'";
+        $consulta = "SELECT * FROM `$tabla` where `name` LIKE '%$busqueda%'";
          
         mysqli_select_db($conn, $database);
         $datos = mysqli_query($conn, $consulta);

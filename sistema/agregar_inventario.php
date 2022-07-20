@@ -25,6 +25,7 @@
     <input type="text" id= "piezas" placeholder="cantidad en pzs">
     <input type="text" id= "precio_total" placeholder="precio total">
     <p id="precio_unitario" onclick = "unitario()">precio unitario</p>
+    
     <select name="" id="tipo_insumo" >
         <option value="0">Tipo insumo</option>
         <option value="1">Consumible</option>

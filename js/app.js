@@ -287,12 +287,12 @@ $('#btn_guardar_insumo').click(function (){
         "date":         $('#fecha').val(),
         "pieces":       $('#piezas').val(),
         "total_price":  $('#precio_total').val(),
-        "unit_price":   $('#precio_unitario').val(),
+        "unit_price":   $('#precio_unitario').text(),
         "type_input":   $('#tipo_insumo').val(),
         "input":        $('#insumo').val(),
         "way_to_pay":   $('#forma_pago').val()
     };
-    
+    console.log(parametros);
     $.ajax({
         data:   parametros,
         url:    '../servidor/agregar_insumo.php',

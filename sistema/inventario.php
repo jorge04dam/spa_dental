@@ -21,6 +21,7 @@
                 <?php 
                     include 'agregar_inventario.php';
                 ?>
+                <input type="button" placeholder="consultar" value="consultar" style="width:100px;">
                 <div id="resultado">
                     
                 </div>
