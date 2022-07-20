@@ -270,6 +270,70 @@ function buscar(){
     });
 }
 
+function unitario(){
+    let piezas  =    $('#piezas').val();
+    let total   =    $('#precio_total').val();
+    let valor_unitario = total / piezas;
+    $('#precio_unitario').html(valor_unitario);
+
+}
+// $('#precio_unitario').click(unitario());
+
+$('#btn_guardar_insumo').click(function (){
+    let parametros = {
+        "product":      $('#product').val(),
+        "brend":        $('#brend').val(),
+        "provider":     $('#provider').val(),
+        "date":         $('#fecha').val(),
+        "pieces":       $('#piezas').val(),
+        "total_price":  $('#precio_total').val(),
+        "unit_price":   $('#precio_unitario').val(),
+        "type_input":   $('#tipo_insumo').val(),
+        "input":        $('#insumo').val(),
+        "way_to_pay":   $('#forma_pago').val()
+    };
+    
+    $.ajax({
+        data:   parametros,
+        url:    '../servidor/agregar_insumo.php',
+        type:   'post',
+
+        beforesend: function(){
+            $('#resultado').html('agregando...');
+            console.log('antes del success');
+        },
+        success: function(mensaje){
+            $('#resultado').html(mensaje);
+            $('#resultado').show();
+        }
+    })
+});
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // $('.btn_buscar').click(function(){
 //     // alert('buscando');
 //     $('#cargando').show();

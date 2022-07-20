@@ -18,6 +18,9 @@
             <article class="main">
                 <br><br>
                 <h1 style = "color:white">Inventario</h1>
+                <?php 
+                    include 'agregar_inventario.php';
+                ?>
                 <div id="resultado">
                     
                 </div>

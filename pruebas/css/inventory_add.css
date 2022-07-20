@@ -5,13 +5,19 @@
     grid-template-columns: repeat(5, auto);
     gap: 5%;
     row-gap: 20%;
-    background-color: red;
+    /* background-color: red; */
 }
-#inventory_add input, #inventory_add select{
+#inventory_add input, #inventory_add select, #precio_unitario{
     border-radius: 10px;
     box-shadow: 1px 1px 5px black;
     text-align: center;
-    width: 100%;
+    width: 15rem;
+    height: 3rem;
+}
+#precio_unitario{
+    background-color: white;
+    color: black;
+    padding-top: 10px;
 }
 #btn_guardar_insumo{
     background-color: rgba(200, 100, 100, 0.5);
