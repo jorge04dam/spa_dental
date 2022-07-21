@@ -15,7 +15,7 @@
     $datos_brend = mysqli_query($conn, $consulta_brend);
 
     /*consulta para la tabla tipo provider*/
-    $consulta_provider = "SELECT * FROM 'provider'";
+    $consulta_provider = "SELECT * FROM `provider`";
     $datos_provider = mysqli_query($conn, $consulta_provider);
 
     /*consulta para la tabla tipo de type_of_input*/
@@ -46,6 +46,7 @@
                 echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
             }
         ?>
+
     </select>
     <select name="" id="unit_type" placeholder="marca">
         <option value="0">Tipo unidad</option>
