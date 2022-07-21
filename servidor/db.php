@@ -38,7 +38,7 @@ if($_POST){
             // echo "</p>";
             // echo "los datos son correctos";
             $_SESSION['active']     = true;
-            // 			$_SESSION['id']         = $data['id'];
+            $_SESSION['id']         = $fila['id'];
             // 			$_SESSION['name']       = $data['name'];
             $_SESSION['nickname']   = $fila['nickname'];
             $_SESSION['status']     = $fila['status'];

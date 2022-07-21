@@ -281,17 +281,19 @@ function unitario(){
 
 $('#btn_guardar_insumo').click(function (){
     let parametros = {
-        "product":      $('#product').val(),
-        "unit_type":    $('#unit_type').val(),
-        "brend":        $('#brend').val(),
-        "provider":     $('#provider').val(),
-        "date":         $('#fecha').val(),
-        "pieces":       $('#piezas').val(),
-        "total_price":  $('#precio_total').val(),
-        "unit_price":   $('#precio_unitario').text(),
-        "type_input":   $('#tipo_insumo').val(),
-        "input":        $('#insumo').val(),
-        "way_to_pay":   $('#forma_pago').val()
+        "product"       :   $('#product').val(),
+        "unit_type"     :   $('#unit_type').val(),
+        "brend"         :   $('#brend').val(),
+        "provider"      :   $('#provider').val(),
+        "date"          :   $('#fecha').val(),
+        "pieces"        :   $('#piezas').val(),
+        "total_price"   :   $('#precio_total').val(),
+        "unit_price"    :   $('#precio_unitario').text(),
+        "type_input"    :   $('#tipo_insumo').val(),
+        "input"         :   $('#insumo').val(),
+        "way_to_pay"    :   $('#forma_pago').val(),
+        "user_online"   :   $('#user_online').val(),
+        "movement"      :   "1"
     };
     console.log(parametros);
     $.ajax({

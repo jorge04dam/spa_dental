@@ -49,28 +49,28 @@
 
     </select>
     <select name="" id="unit_type" placeholder="marca">
-        <option value="0">Tipo unidad</option>
-        <option value="1">Pieza</option>
-        <option value="2">Mililitro</option>
-        <option value="3">Litro</option>
-        <option value="4">Miligramo</option>
-        <option value="5">Gramo</option>
-        <option value="6">Kilogramo</option>
+        <?php
+            while($fila = mysqli_fetch_array($datos_unit_type, MYSQLI_ASSOC)){
+                //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                echo "<option value=".$fila['id_unit_type'].">".$fila['name_unit']."</option>";
+            }
+        ?>
     </select>
     <select name="" id="brend" placeholder="marca">
-        <option value="0">marca</option>
-        <option value="1">kirkland</option>
-        <option value="2">Ambiderm</option>
-        <option value="3">Génerico</option>
+    <?php
+            while($fila = mysqli_fetch_array($datos_brend, MYSQLI_ASSOC)){
+                //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                echo "<option value=".$fila['id_brend'].">".$fila['name_brend']."</option>";
+            }
+        ?>
     </select>
     <select name="" id="provider" >
-        <option value="0">Proveedor</option>
-        <option value="1">Costco</option>
-        <option value="2">Depósito Villa</option>
-        <option value="3">Similares</option>
-        <option value="4">Dental Moderna</option>
-        <option value="5">Depósito Xola</option>
-        <option value="6">Ana Maria Gonzalez</option>
+    <?php
+            while($fila = mysqli_fetch_array($datos_provider, MYSQLI_ASSOC)){
+                //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                echo "<option value=".$fila['id_provider'].">".$fila['name_provider']."</option>";
+            }
+        ?>
     </select>
     
     <input type="date" id="fecha" placeholder="fecha">
@@ -79,23 +79,30 @@
     <p id="precio_unitario" onclick = "unitario()">precio unitario</p>
     
     <select name="" id="tipo_insumo" >
-        <option value="0">Tipo insumo</option>
-        <option value="1">Consumible</option>
-        <option value="2">instrumental</option>
+    <?php
+            while($fila = mysqli_fetch_array($datos_type_of_input, MYSQLI_ASSOC)){
+                //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                echo "<option value=".$fila['id_type_of_input'].">".$fila['type_of_input']."</option>";
+            }
+        ?>
     </select>
     
     <select name="" id="insumo" >
-        <option value="0">Área</option>
-        <option value="1">Dental</option>
-        <option value="2">Limpieza</option>
-        <option value="3">Papeleria</option>
+    <?php
+            while($fila = mysqli_fetch_array($datos_input, MYSQLI_ASSOC)){
+                //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                echo "<option value=".$fila['id_input'].">".$fila['name_input']."</option>";
+            }
+        ?>
     </select>
     <select name="" id="forma_pago" >
-        <option value="0">Forma de pago</option>
-        <option value="1">Efectivo</option>
-        <option value="2">Tarjeta de débito</option>
-        <option value="3">Transferencia</option>
-        <option value="4">Tarjeta de crédito</option>
+    <?php
+            while($fila = mysqli_fetch_array($datos_way_to_pay, MYSQLI_ASSOC)){
+                //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                echo "<option value=".$fila['id_way_to_pay'].">".$fila['way_to_pay']."</option>";
+            }
+        ?>
     </select>
     <input type="button" value="Guardar insumo" id="btn_guardar_insumo">
+   
 </form>

@@ -21,12 +21,12 @@
                 <?php 
                     include 'agregar_inventario.php';
                 ?>
-                <input type="button" placeholder="consultar" value="consultar" style="width:100px;">
+                <!-- <input type="button" placeholder="consultar" value="consultar" style="width:100px;"> -->
                 <div id="resultado">
                     
                 </div>
             </article>
-
+            <input type="hidden" id="user_online" value="<?php echo $_SESSION['id'];?>">
 
             <?php
                 include '../include/footer.php'; 
@@ -39,3 +39,9 @@
     
     ?>
     
+
+    <!-- inventario:
+
+    movimientos
+        --consumo           / salida
+        --abastecimiento    / entrada -->
