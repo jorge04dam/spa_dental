@@ -3,20 +3,22 @@
     if($_POST){
         $busqueda = $_POST['busqueda'];
         // echo $busqueda;
-        echo "<h3>Resultados de la busqueda</h3>";
-        echo "
-        <table>
-            <thead style='background: rgba(155,155,155,0.5);'>
-             <tr>
-                    <th>Producto</th>
-                    <th>Marca</th>
-                    <th>Proveedor</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Fecha</th>      
-                </tr>
+        $cabecera_tabla = "";
+        //  "
+        // <table>
+        //     <thead style='background: rgba(155,155,155,0.5);'>
+        //      <tr>
+        //             <th>Producto</th>
+        //             <th>Marca</th>
+        //             <th>Proveedor</th>
+        //             <th>Cantidad</th>
+        //             <th>Precio</th>
+        //             <th>Fecha</th>      
+        //         </tr>
             
-            </thead>";
+        //     </thead>";;
+        echo "<h3>Resultados de la busqueda</h3>";
+        echo $cabecera_tabla;
        
         if($_POST['accion'] == "1"){$tabla = $table_patient;}
         if($_POST['accion'] == "2"){$tabla = $table_doctor;}
@@ -60,7 +62,13 @@
         }
         else if($_POST['accion'] == "3"){
             // $consulta = "SELECT * FROM `$table_inventoy` where `name` LIKE '%$busqueda%'";
-            $consulta = "SELECT prodcutos.nombre_producto, marca.name_marca, proveedores.nombre_proveedor, cantidad, precio, fecha FROM inventory inner join marca on inventory.marca_id = marca.id_marca inner join prodcutos on inventory.producto_id = prodcutos.id_producto inner join proveedores on inventory.proveedor_id = proveedores.id_proveedores;
+            $consulta = "SELECT id_inventory, product.name_product, unit_type.name_unit, brend.name_brend, provider.name_provider, date, piece_quantity, unit_price, total_price, type_of_input.type_of_input, input.name_input, way_to_pay.way_to_pay FROM inventory JOIN product on inventory.product_id = product.id_product
+            JOIN unit_type on inventory.unit_type_id = unit_type.id_unit_type
+            JOIN brend on inventory.brend_id = brend.id_brend
+            JOIN provider on inventory.product_id = provider.id_provider
+            JOIN type_of_input on inventory.type_of_input_id = type_of_input.id_type_of_input
+            JOIN input on inventory.input_id = input.id_input
+            JOIN way_to_pay on inventory.way_to_pay_id = way_to_pay.id_way_to_pay
             ";
             mysqli_select_db($conn, $database);
             $datos = mysqli_query($conn, $consulta);
@@ -70,8 +78,30 @@
             echo "No se ha encontrado ningun resultado para esa busqueda.";
             exit();
         }
-        // $datos1 = json_encode($datos);
-        
+        $cabecera_tabla = "";
+        echo $cabecera_tabla = "
+        <table>
+            <thead style='background: rgba(155,155,155,0.5);'>
+             <tr>
+                    <th>Artículo</th>
+                    <th>Tipo unidad</th>
+                    <th>Marca</th>
+                    <th>Provedor</th>
+                    <th>Fecha</th>
+                    <th>Unidades</th>
+                    <th>Precio unitario</th>
+                    <th>Precio total</th>
+                    <th>Tipo insumo</th>
+                    <th>Área</th>
+                    <th>Forma pago</th>       
+                </tr>
+            
+            </thead>";
+
+
+
+
+
         while ($file = mysqli_fetch_array($datos, MYSQLI_ASSOC)) {
             // var_dump($file);
            
@@ -79,12 +109,17 @@
             <tbody>
 
                 <tr>
-                    <th>".$file['nombre_producto']."</th>
-                    <th>".$file['name_marca']."</th>
-                    <th>".$file['nombre_proveedor']."</th>
-                    <th>".$file['cantidad']."</th>  
-                    <th>".$file['precio']."</th>
-                    <th>".$file['fecha']."</th>        
+                    <th>".$file['name_product']."</th>
+                    <th>".$file['name_unit']."</th>
+                    <th>".$file['name_brend']."</th>
+                    <th>".$file['name_provider']."</th>  
+                    <th>".$file['date']."</th>
+                    <th>".$file['piece_quantity']."</th>   
+                    <th>".$file['unit_price']."</th>
+                    <th>".$file['total_price']."</th>
+                    <th>".$file['type_of_input']."</th>  
+                    <th>".$file['name_input']."</th>
+                    <th>".$file['way_to_pay']."</th>      
                 </tr>
             </tbody>
         

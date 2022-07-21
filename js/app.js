@@ -282,6 +282,7 @@ function unitario(){
 $('#btn_guardar_insumo').click(function (){
     let parametros = {
         "product":      $('#product').val(),
+        "unit_type":    $('#unit_type').val(),
         "brend":        $('#brend').val(),
         "provider":     $('#provider').val(),
         "date":         $('#fecha').val(),
