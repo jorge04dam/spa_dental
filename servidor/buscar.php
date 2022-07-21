@@ -1,6 +1,25 @@
 <?php 
     include 'connect.php';
     if($_POST){
+        
+        // $update_insumo = "SELECT * FROM product where `name_product` = '$product'";
+
+        // mysqli_select_db($conn, $database);
+        // $response = mysqli_query($conn, $update_insumo);
+
+        // $response = mysqli_num_rows($response);
+ 
+        // if($response){
+        //     echo "El articulo ya existe";
+        // }else{
+        //     echo "No existe";
+        // }
+
+
+
+
+
+
         $busqueda = $_POST['busqueda'];
         // echo $busqueda;
         $cabecera_tabla = "";
@@ -62,13 +81,15 @@
         }
         else if($_POST['accion'] == "3"){
             // $consulta = "SELECT * FROM `$table_inventoy` where `name` LIKE '%$busqueda%'";
-            $consulta = "SELECT id_inventory, product.name_product, unit_type.name_unit, brend.name_brend, provider.name_provider, date, piece_quantity, unit_price, total_price, type_of_input.type_of_input, input.name_input, way_to_pay.way_to_pay FROM inventory JOIN product on inventory.product_id = product.id_product
+            $consulta = "SELECT id_inventory, product.name_product, unit_type.name_unit, brend.name_brend, `provider`.name_provider, date, piece_quantity, unit_price, total_price, type_of_input.type_of_input, input.name_input, way_to_pay.way_to_pay, `login`.nickname, movement.name_movement FROM inventory JOIN product on inventory.product_id = product.id_product
             JOIN unit_type on inventory.unit_type_id = unit_type.id_unit_type
             JOIN brend on inventory.brend_id = brend.id_brend
-            JOIN provider on inventory.product_id = provider.id_provider
+            JOIN `provider` on inventory.product_id = `provider`.id_provider
             JOIN type_of_input on inventory.type_of_input_id = type_of_input.id_type_of_input
             JOIN input on inventory.input_id = input.id_input
             JOIN way_to_pay on inventory.way_to_pay_id = way_to_pay.id_way_to_pay
+            JOIN `login` on inventory.user_id = `login`.id
+            JOIN movement on inventory.movement_id = movement.id_movement
             ";
             mysqli_select_db($conn, $database);
             $datos = mysqli_query($conn, $consulta);
@@ -93,7 +114,9 @@
                     <th>Precio total</th>
                     <th>Tipo insumo</th>
                     <th>Área</th>
-                    <th>Forma pago</th>       
+                    <th>Forma pago</th>
+                    <th>Usuario</th>
+                    <th>Movimiento</th>        
                 </tr>
             
             </thead>";
@@ -119,7 +142,9 @@
                     <th>".$file['total_price']."</th>
                     <th>".$file['type_of_input']."</th>  
                     <th>".$file['name_input']."</th>
-                    <th>".$file['way_to_pay']."</th>      
+                    <th>".$file['way_to_pay']."</th>
+                    <th>".$file['nickname']."</th>
+                    <th>".$file['name_movement']."</th>        
                 </tr>
             </tbody>
         
@@ -170,8 +195,9 @@
 
 <?php
     }else{
-        echo "no hola";
+        echo "$_post";
     }
     
 ?>
   
+

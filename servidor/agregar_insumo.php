@@ -17,8 +17,6 @@
         $user_online    = $_POST['user_online'];
         $movement       = $_POST['movement'];
 
-        echo $user_online;
-        exit();
         $consulta = "INSERT INTO `inventory` (`id_inventory`, `product_id`,`unit_type_id`,`brend_id`, `provider_id`, `date`, `piece_quantity`, `unit_price`, `total_price`, `type_of_input_id`, `input_id`, `way_to_pay_id`, `user_id`, `movement_id`) VALUES (NULL, '$product','$unit_type', '$brend', '$provider', '$date', '$piece', '$unit_price', '$total_price', '$type_input', '$input', '$way_to_pay', '$user_online', '$movement')";
         mysqli_select_db($conn, $database);
         $datos = mysqli_query($conn, $consulta);

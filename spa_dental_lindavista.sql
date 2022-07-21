@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2022 a las 15:22:51
+-- Tiempo de generación: 22-07-2022 a las 00:58:54
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -24,127 +24,116 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `brend`
+--
+
+CREATE TABLE `brend` (
+  `id_brend` int(11) NOT NULL,
+  `name_brend` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `brend`
+--
+
+INSERT INTO `brend` (`id_brend`, `name_brend`) VALUES
+(1, 'Kirkland'),
+(2, 'Ambiderm'),
+(3, 'Generico');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `cargo`
 --
 
 CREATE TABLE `cargo` (
   `id` int(11) NOT NULL,
-  `position` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `name` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `cargo`
 --
 
-INSERT INTO `cargo` (`id`, `position`) VALUES
+INSERT INTO `cargo` (`id`, `name`) VALUES
 (1, 'Administrador'),
 (2, 'Recepción');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Estructura de tabla para la tabla `input`
 --
 
-CREATE TABLE `cliente` (
-  `idcliente` int(11) NOT NULL,
-  `nit` int(11) DEFAULT NULL,
-  `nombre` varchar(80) DEFAULT NULL,
-  `telefono` int(11) DEFAULT NULL,
-  `direccion` text DEFAULT NULL,
-  `dateadd` datetime NOT NULL DEFAULT current_timestamp(),
-  `usuario_id` int(11) NOT NULL,
-  `estatus` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `input` (
+  `id_input` int(11) NOT NULL,
+  `name_input` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `cliente`
+-- Volcado de datos para la tabla `input`
 --
 
-INSERT INTO `cliente` (`idcliente`, `nit`, `nombre`, `telefono`, `direccion`, `dateadd`, `usuario_id`, `estatus`) VALUES
-(1, 1234567, 'Willian Juarez', 878766787, 'Guatemala, Guatemala', '2018-02-15 21:55:51', 1, 1),
-(2, 87654321, 'Marta Gonzales', 34343434, 'Calzada Buena Vista', '2018-02-15 21:57:03', 1, 1),
-(3, 0, 'Elena HernÃ¡ndez', 987897987, 'Guatemala, Chimaltenango', '2018-02-15 21:59:20', 2, 0),
-(4, 0, 'Julio Maldonado', 908098979, 'Avenida las Americas Zona 14', '2018-02-15 22:00:31', 3, 0),
-(5, 0, 'Helen', 98789798, 'Guatemala', '2018-02-18 10:53:53', 1, 1),
-(6, 0, 'Juan', 7987987, 'Chimaltenango', '2018-02-18 10:56:44', 1, 0),
-(7, 798798798, 'Jorge Maldonado', 2147483647, 'Colonia la Flores', '2018-02-18 11:10:07', 1, 1),
-(8, 0, 'Marta Cabrera', 987987987, 'Guatemala', '2018-02-18 11:11:40', 2, 1),
-(9, 79879879, 'Julio Estrada', 897987987, 'Avenida Elena', '2018-02-18 11:13:23', 3, 1),
-(10, 2147483647, 'Roberto Morazan', 2147483647, 'Chimaltenango, Guatemala', '2018-03-04 19:17:22', 1, 1),
-(11, 898798798, 'Rosa Pineda', 987998788, 'Ciudad Quetzal', '2018-03-04 19:17:45', 1, 1),
-(12, 0, 'Angel Molina', 2147483647, 'Calzada Buena Vista', '2018-03-04 19:18:21', 1, 1);
+INSERT INTO `input` (`id_input`, `name_input`) VALUES
+(1, 'Dental'),
+(2, 'Limpieza'),
+(3, 'Papeleria');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detallefactura`
+-- Estructura de tabla para la tabla `inventory`
 --
 
-CREATE TABLE `detallefactura` (
-  `correlativo` bigint(11) NOT NULL,
-  `nofactura` bigint(11) DEFAULT NULL,
-  `codproducto` int(11) DEFAULT NULL,
-  `cantidad` int(11) DEFAULT NULL,
-  `preciototal` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `inventory` (
+  `id_inventory` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `unit_type_id` int(11) NOT NULL,
+  `brend_id` int(11) NOT NULL,
+  `provider_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `piece_quantity` int(11) NOT NULL,
+  `unit_price` float NOT NULL,
+  `total_price` float NOT NULL,
+  `type_of_input_id` int(11) NOT NULL,
+  `input_id` int(11) NOT NULL,
+  `way_to_pay_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `movement_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `inventory`
+--
+
+INSERT INTO `inventory` (`id_inventory`, `product_id`, `unit_type_id`, `brend_id`, `provider_id`, `date`, `piece_quantity`, `unit_price`, `total_price`, `type_of_input_id`, `input_id`, `way_to_pay_id`, `user_id`, `movement_id`) VALUES
+(20, 3, 1, 2, 2, '2022-07-18', 10, 45, 450, 1, 1, 1, 1, 1),
+(21, 1, 1, 1, 1, '2022-07-11', 10, 0.1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalle_temp`
+-- Estructura de tabla para la tabla `inventory_eliminar`
 --
 
-CREATE TABLE `detalle_temp` (
-  `correlativo` int(11) NOT NULL,
-  `nofactura` bigint(11) NOT NULL,
-  `codproducto` int(11) NOT NULL,
+CREATE TABLE `inventory_eliminar` (
+  `id_inventory` int(11) NOT NULL,
+  `producto_id` int(11) NOT NULL,
+  `marca_id` int(11) NOT NULL,
+  `proveedor_id` int(11) NOT NULL,
+  `fecha` date NOT NULL,
   `cantidad` int(11) NOT NULL,
-  `preciototal` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
+  `precio` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Estructura de tabla para la tabla `entradas`
+-- Volcado de datos para la tabla `inventory_eliminar`
 --
 
-CREATE TABLE `entradas` (
-  `correlativo` int(11) NOT NULL,
-  `codproducto` int(11) NOT NULL,
-  `fecha` datetime NOT NULL DEFAULT current_timestamp(),
-  `cantidad` int(11) NOT NULL,
-  `precio` decimal(10,2) NOT NULL,
-  `usuario_id` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `entradas`
---
-
-INSERT INTO `entradas` (`correlativo`, `codproducto`, `fecha`, `cantidad`, `precio`, `usuario_id`) VALUES
-(1, 1, '0000-00-00 00:00:00', 150, '110.00', 1),
-(2, 2, '2018-04-05 00:12:15', 100, '1500.00', 1),
-(3, 3, '2018-04-07 22:48:23', 200, '250.00', 9),
-(4, 4, '2018-09-08 22:28:50', 50, '10000.00', 1),
-(5, 5, '2018-09-08 22:34:38', 100, '500.00', 1),
-(6, 6, '2018-09-08 22:35:27', 8, '2000.00', 1),
-(7, 7, '2018-12-02 00:15:09', 75, '2200.00', 1),
-(8, 8, '2018-12-02 00:39:42', 75, '160.00', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `factura`
---
-
-CREATE TABLE `factura` (
-  `nofactura` bigint(11) NOT NULL,
-  `fecha` datetime NOT NULL,
-  `usuario` int(11) DEFAULT NULL,
-  `codcliente` int(11) DEFAULT NULL,
-  `totaltactura` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `inventory_eliminar` (`id_inventory`, `producto_id`, `marca_id`, `proveedor_id`, `fecha`, `cantidad`, `precio`) VALUES
+(1, 1, 1, 2, '2022-07-18', 20, 7.5),
+(2, 2, 3, 1, '2022-07-17', 10, 10);
 
 -- --------------------------------------------------------
 
@@ -154,50 +143,60 @@ CREATE TABLE `factura` (
 
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
-  `name` varchar(15) NOT NULL,
-  `nickname` varchar(15) NOT NULL,
-  `password` varchar(15) NOT NULL,
+  `name` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `nickname` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `password` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `status` bit(1) NOT NULL,
   `cargo_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `login`
 --
 
 INSERT INTO `login` (`id`, `name`, `nickname`, `password`, `status`, `cargo_id`) VALUES
-(1, 'jorgea', 'jorgedam', '123', b'1', 1),
-(2, 'raul', 'raul', '123', b'1', 2),
-(3, 'alonso', 'pegaso', '123', b'0', 1),
-(4, 'doctora', 'america', '123', b'0', 1);
+(1, 'jorge', 'jorgedam', '123', b'1', 1),
+(2, 'ame', 'ame98', '123', b'0', 1),
+(3, 'raul', 'rulo', '123', b'0', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `login_eliminar`
+-- Estructura de tabla para la tabla `marca`
 --
 
-CREATE TABLE `login_eliminar` (
-  `id` int(11) NOT NULL,
-  `name` varchar(15) NOT NULL,
-  `nickname` varchar(15) NOT NULL,
-  `password` varchar(15) NOT NULL,
-  `status` bit(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `marca` (
+  `id_marca` int(11) NOT NULL,
+  `name_marca` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `login_eliminar`
+-- Volcado de datos para la tabla `marca`
 --
 
-INSERT INTO `login_eliminar` (`id`, `name`, `nickname`, `password`, `status`) VALUES
-(1, 'jorge deaquino', 'jorgedam', 'pass', b'0'),
-(2, 'america', 'ame98', '1234', b'1'),
-(3, '[value-2]', '[value-3]', '[value-4]', b'1'),
-(4, '[value-2]', '[value-3]', '[value-4]', b'0'),
-(5, '[value-2]', '[value-3]', '[value-4]', b'0'),
-(6, '123', '123', '123', b'0'),
-(9, 'raul', 'rulo', 'qwerty', b'0'),
-(10, 'alonso', 'alonso2', 'pass', b'0');
+INSERT INTO `marca` (`id_marca`, `name_marca`) VALUES
+(1, 'Oreo'),
+(2, 'Emperador'),
+(3, 'Buñuelos');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `movement`
+--
+
+CREATE TABLE `movement` (
+  `id_movement` int(11) NOT NULL,
+  `name_movement` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `movement`
+--
+
+INSERT INTO `movement` (`id_movement`, `name_movement`) VALUES
+(1, 'Entrada'),
+(2, 'Salida');
 
 -- --------------------------------------------------------
 
@@ -206,159 +205,183 @@ INSERT INTO `login_eliminar` (`id`, `name`, `nickname`, `password`, `status`) VA
 --
 
 CREATE TABLE `patient_prueba` (
-  `id` int(11) NOT NULL,
-  `name` varchar(15) NOT NULL,
-  `lastname` varchar(15) NOT NULL,
-  `lastname2` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_patient` int(11) NOT NULL,
+  `name` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `last_name` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `last_name2` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `gender` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `age` int(11) NOT NULL,
+  `phone` varchar(14) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `patient_prueba`
 --
 
-INSERT INTO `patient_prueba` (`id`, `name`, `lastname`, `lastname2`) VALUES
-(1, 'saul', 'sanchez', 'rivera'),
-(2, 'michelle', 'hernandez', 'hernandez');
+INSERT INTO `patient_prueba` (`id_patient`, `name`, `last_name`, `last_name2`, `gender`, `age`, `phone`) VALUES
+(1, 'pedro', 'lopez', 'garcia', 'M', 20, '+52-5527361211'),
+(2, 'luis', 'perez', 'rios', 'M', 26, '+52-7444412328'),
+(3, 'jorge', 'deaquino', 'montes', 'M', 26, '+52-5527361211'),
+(4, 'alonso', 'perez', 'lopez', 'M', 22, '+52-5512312312');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `producto`
+-- Estructura de tabla para la tabla `prodcutos`
 --
 
-CREATE TABLE `producto` (
-  `codproducto` int(11) NOT NULL,
-  `descripcion` varchar(100) DEFAULT NULL,
-  `proveedor` int(11) DEFAULT NULL,
-  `precio` decimal(10,2) DEFAULT NULL,
-  `existencia` int(11) DEFAULT NULL,
-  `date_add` datetime NOT NULL DEFAULT current_timestamp(),
-  `usuario_id` int(11) NOT NULL,
-  `estatus` int(11) NOT NULL DEFAULT 1,
-  `foto` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `prodcutos` (
+  `id_producto` int(11) NOT NULL,
+  `nombre_producto` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `producto`
+-- Volcado de datos para la tabla `prodcutos`
 --
 
-INSERT INTO `producto` (`codproducto`, `descripcion`, `proveedor`, `precio`, `existencia`, `date_add`, `usuario_id`, `estatus`, `foto`) VALUES
-(1, 'Mouse USB', 11, '110.00', 150, '2018-04-05 00:09:34', 1, 1, 'img_producto.png'),
-(2, 'Monitor LCD', 3, '1500.00', 100, '2018-04-05 00:12:15', 1, 1, 'img_producto.png'),
-(3, 'Teclado USB', 9, '250.00', 200, '2018-04-07 22:48:23', 9, 1, 'img_producto.png'),
-(4, 'Cama', 5, '10000.00', 50, '2018-09-08 22:28:50', 1, 1, 'img_21084f55f7b61c8baa2726ad0b4a1dca.jpg'),
-(5, 'Plancha', 6, '500.00', 100, '2018-09-08 22:34:38', 1, 1, 'img_25c1e2ae283b99e83b387bf800052939.jpg'),
-(6, 'Monitor', 11, '2000.00', 8, '2018-09-08 22:35:27', 1, 1, 'img_producto.png'),
-(7, 'Monitor LCD 17', 9, '2200.00', 75, '2018-12-02 00:15:09', 1, 1, 'img_1328286905ecc9eec8e81b94fa1786b9.jpg'),
-(8, 'USG 32 GB', 11, '160.00', 75, '2018-12-02 00:39:42', 1, 1, 'img_cce86641de32660a29e0fa49f58a950c.jpg');
-
---
--- Disparadores `producto`
---
-DELIMITER $$
-CREATE TRIGGER `entradas_A_I` AFTER INSERT ON `producto` FOR EACH ROW BEGIN
-		INSERT INTO entradas(codproducto,cantidad,precio,usuario_id) 
-		VALUES(new.codproducto,new.existencia,new.precio,new.usuario_id);    
-	END
-$$
-DELIMITER ;
+INSERT INTO `prodcutos` (`id_producto`, `nombre_producto`) VALUES
+(1, 'Galleta '),
+(2, 'Barras'),
+(3, 'Donas');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `proveedor`
+-- Estructura de tabla para la tabla `product`
 --
 
-CREATE TABLE `proveedor` (
-  `codproveedor` int(11) NOT NULL,
-  `proveedor` varchar(100) DEFAULT NULL,
-  `contacto` varchar(100) DEFAULT NULL,
-  `telefono` bigint(11) DEFAULT NULL,
-  `direccion` text DEFAULT NULL,
-  `date_add` datetime NOT NULL DEFAULT current_timestamp(),
-  `usuario_id` int(11) NOT NULL,
-  `estatus` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `product` (
+  `id_product` int(11) NOT NULL,
+  `name_product` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `description` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `proveedor`
+-- Volcado de datos para la tabla `product`
 --
 
-INSERT INTO `proveedor` (`codproveedor`, `proveedor`, `contacto`, `telefono`, `direccion`, `date_add`, `usuario_id`, `estatus`) VALUES
-(1, 'BIC', 'Claudia Rosales', 789877889, 'Avenida las Americas', '2018-03-20 23:13:43', 1, 0),
-(2, 'CASIO', 'Jorge Herrera', 565656565656, 'Calzada Las Flores', '2018-03-20 23:14:41', 2, 0),
-(3, 'Omega', 'Julio Estrada', 982877489, 'Avenida Elena Zona 4, Guatemala', '2018-03-24 23:21:10', 1, 1),
-(4, 'Dell Compani', 'Roberto Estrada', 2147483647, 'Guatemala, Guatemala', '2018-03-24 23:21:59', 1, 1),
-(5, 'Olimpia S.A', 'Elena Franco Morales', 564535676, '5ta. Avenida Zona 4 Ciudad', '2018-03-24 23:22:45', 1, 1),
-(6, 'Oster', 'Fernando Guerra', 78987678, 'Calzada La Paz, Guatemala', '2018-03-24 23:24:43', 1, 1),
-(7, 'ACELTECSA S.A', 'Ruben PÃ©rez', 789879889, 'Colonia las Victorias', '2018-03-24 23:25:39', 1, 1),
-(8, 'Sony', 'Julieta Contreras', 89476787, 'Antigua Guatemala', '2018-03-24 23:26:45', 1, 1),
-(9, 'VAIO', 'Felix Arnoldo Rojas', 476378276, 'Avenida las Americas Zona 13', '2018-03-24 23:30:33', 1, 1),
-(10, 'SUMAR', 'Oscar Maldonado', 788376787, 'Colonia San Jose, Zona 5 Guatemala', '2018-03-24 23:32:28', 1, 1),
-(11, 'HP', 'Angel Cardona', 2147483647, '5ta. calle zona 4 Guatemala', '2018-03-24 23:52:20', 2, 1);
+INSERT INTO `product` (`id_product`, `name_product`, `description`) VALUES
+(1, 'Guantes', 'Caja de guantes chicos'),
+(2, 'Cubrebocas', 'Cubrebocas tricapa'),
+(3, 'pasta dental', 'pasta dental ultra protec colgate'),
+(4, 'llave', 'modulo llave');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rol`
+-- Estructura de tabla para la tabla `proveedores`
 --
 
-CREATE TABLE `rol` (
-  `idrol` int(11) NOT NULL,
-  `rol` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `proveedores` (
+  `id_proveedores` int(11) NOT NULL,
+  `nombre_proveedor` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `rol`
+-- Volcado de datos para la tabla `proveedores`
 --
 
-INSERT INTO `rol` (`idrol`, `rol`) VALUES
-(1, 'Administrador'),
-(2, 'Supervisor'),
-(3, 'Vendedor');
+INSERT INTO `proveedores` (`id_proveedores`, `nombre_proveedor`) VALUES
+(1, 'Bimbo'),
+(2, 'Gamesa'),
+(3, 'Cuetara');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `provider`
 --
 
-CREATE TABLE `usuario` (
-  `idusuario` int(11) NOT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `correo` varchar(100) DEFAULT NULL,
-  `usuario` varchar(15) DEFAULT NULL,
-  `clave` varchar(100) DEFAULT NULL,
-  `rol` int(11) DEFAULT NULL,
-  `estatus` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `provider` (
+  `id_provider` int(11) NOT NULL,
+  `name_provider` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `rfc` varchar(14) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Volcado de datos para la tabla `provider`
 --
 
-INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`, `estatus`) VALUES
-(1, 'Abel', 'info@abelosh.com', 'admin', '202cb962ac59075b964b07152d234b70', 1, 1),
-(2, 'Julio Estrada', 'julio@gmail.com', 'julio', 'c027636003b468821081e281758e35ff', 2, 1),
-(3, 'Carlos HernÃ¡ndez', 'carlos@gmail.com', 'carlos', 'dc599a9972fde3045dab59dbd1ae170b', 3, 1),
-(5, 'Marta Elena Franco', 'marta@gmail.com', 'marta', 'a763a66f984948ca463b081bf0f0e6d0', 3, 1),
-(7, 'Carol Cabrera', 'carol@gmail.com', 'carol', 'a9a0198010a6073db96434f6cc5f22a8', 2, 0),
-(8, 'Marvin Solares ', 'marvin@gmail.com', 'marvin', 'dba0079f1cb3a3b56e102dd5e04fa2af', 3, 1),
-(9, 'Alan Melgar', 'alan@gmail.com', 'alan', '02558a70324e7c4f269c69825450cec8', 2, 1),
-(10, 'Efrain GÃ³mez', 'efrain@gmail.com', 'efrain', '69423f0c254e5c1d2b0f5ee202459d2c', 2, 1),
-(11, 'Fran Escobar', 'fran@gmail.com', 'fran', '2c20cb5558626540a1704b1fe524ea9a', 1, 1),
-(12, 'Hana Montenegro', 'hana@gmail.com', 'hana', '52fd46504e1b86d80cfa22c0a1168a9d', 3, 1),
-(13, 'Fredy Miranda', 'fredy@gmail.com', 'fredy', 'b89845d7eb5f8388e090fcc151d618c8', 2, 1),
-(14, 'Roberto Salazar', 'roberto@hotmail.com', 'roberto', 'c1bfc188dba59d2681648aa0e6ca8c8e', 3, 1),
-(15, 'William Fernando PÃ©rez', 'william@hotmail.com', 'william', 'fd820a2b4461bddd116c1518bc4b0f77', 3, 1),
-(16, 'Francisco Mora', 'frans@gmail.com', 'frans', '64dd0133f9fb666ca6f4692543844f31', 3, 1),
-(17, 'Ruben Guevara', 'ruben@hotmail.es', 'ruben', '32252792b9dccf239f5a5bd8e778dbc2', 3, 1),
-(18, 'jorge', 'jorge.agustin.deaquino@gmail.com', 'jorgedam', '94faf91ced3043d9738ed92f354f23d1', 1, 1),
-(19, 'a', 'a@a.a', 'a', '0cc175b9c0f1b6a831c399e269772661', 1, 1);
+INSERT INTO `provider` (`id_provider`, `name_provider`, `rfc`) VALUES
+(1, 'Costco', 'X1X11XX11'),
+(2, 'Deposito Villa', 'DEPOS454'),
+(3, 'Similares', 'XXX-13'),
+(4, 'Dental moderna', 'XXX-13'),
+(5, 'Depósito Xola', 'XXX-13'),
+(6, 'Ana Maria Gonza', 'XXX-13');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `type_of_input`
+--
+
+CREATE TABLE `type_of_input` (
+  `id_type_of_input` int(11) NOT NULL,
+  `type_of_input` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `type_of_input`
+--
+
+INSERT INTO `type_of_input` (`id_type_of_input`, `type_of_input`) VALUES
+(1, 'Consumible'),
+(2, 'Instrumental');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `unit_type`
+--
+
+CREATE TABLE `unit_type` (
+  `id_unit_type` int(11) NOT NULL,
+  `name_unit` varchar(10) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `unit_type`
+--
+
+INSERT INTO `unit_type` (`id_unit_type`, `name_unit`) VALUES
+(1, 'pieza'),
+(2, 'Mililitro'),
+(3, 'Litro'),
+(4, 'Miligramo'),
+(5, 'Gramo'),
+(6, 'Kilogramo');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `way_to_pay`
+--
+
+CREATE TABLE `way_to_pay` (
+  `id_way_to_pay` int(11) NOT NULL,
+  `way_to_pay` varchar(15) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `way_to_pay`
+--
+
+INSERT INTO `way_to_pay` (`id_way_to_pay`, `way_to_pay`) VALUES
+(1, 'Efectivo'),
+(2, 'Tarjeta Debito'),
+(3, 'Transferencia'),
+(4, 'Tarjeta de Cred');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `brend`
+--
+ALTER TABLE `brend`
+  ADD PRIMARY KEY (`id_brend`);
 
 --
 -- Indices de la tabla `cargo`
@@ -367,42 +390,34 @@ ALTER TABLE `cargo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `cliente`
+-- Indices de la tabla `input`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idcliente`),
-  ADD KEY `usuario_id` (`usuario_id`);
+ALTER TABLE `input`
+  ADD PRIMARY KEY (`id_input`);
 
 --
--- Indices de la tabla `detallefactura`
+-- Indices de la tabla `inventory`
 --
-ALTER TABLE `detallefactura`
-  ADD PRIMARY KEY (`correlativo`),
-  ADD KEY `codproducto` (`codproducto`),
-  ADD KEY `nofactura` (`nofactura`);
+ALTER TABLE `inventory`
+  ADD PRIMARY KEY (`id_inventory`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `brend_id` (`brend_id`),
+  ADD KEY `provider_id` (`provider_id`),
+  ADD KEY `type_of_input_id` (`type_of_input_id`),
+  ADD KEY `input_id` (`input_id`),
+  ADD KEY `way_to_pay_id` (`way_to_pay_id`),
+  ADD KEY `unit_type` (`unit_type_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `movement_id` (`movement_id`);
 
 --
--- Indices de la tabla `detalle_temp`
+-- Indices de la tabla `inventory_eliminar`
 --
-ALTER TABLE `detalle_temp`
-  ADD PRIMARY KEY (`correlativo`),
-  ADD KEY `nofactura` (`nofactura`),
-  ADD KEY `codproducto` (`codproducto`);
-
---
--- Indices de la tabla `entradas`
---
-ALTER TABLE `entradas`
-  ADD PRIMARY KEY (`correlativo`),
-  ADD KEY `codproducto` (`codproducto`);
-
---
--- Indices de la tabla `factura`
---
-ALTER TABLE `factura`
-  ADD PRIMARY KEY (`nofactura`),
-  ADD KEY `usuario` (`usuario`),
-  ADD KEY `codcliente` (`codcliente`);
+ALTER TABLE `inventory_eliminar`
+  ADD PRIMARY KEY (`id_inventory`),
+  ADD KEY `producto_id` (`producto_id`),
+  ADD KEY `proveedor_id` (`proveedor_id`),
+  ADD KEY `marca_id` (`marca_id`);
 
 --
 -- Indices de la tabla `login`
@@ -412,48 +427,74 @@ ALTER TABLE `login`
   ADD KEY `cargo_id` (`cargo_id`);
 
 --
--- Indices de la tabla `login_eliminar`
+-- Indices de la tabla `marca`
 --
-ALTER TABLE `login_eliminar`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`id_marca`);
+
+--
+-- Indices de la tabla `movement`
+--
+ALTER TABLE `movement`
+  ADD PRIMARY KEY (`id_movement`);
 
 --
 -- Indices de la tabla `patient_prueba`
 --
 ALTER TABLE `patient_prueba`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_patient`);
 
 --
--- Indices de la tabla `producto`
+-- Indices de la tabla `prodcutos`
 --
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`codproducto`),
-  ADD KEY `proveedor` (`proveedor`),
-  ADD KEY `usuario_id` (`usuario_id`);
+ALTER TABLE `prodcutos`
+  ADD PRIMARY KEY (`id_producto`);
 
 --
--- Indices de la tabla `proveedor`
+-- Indices de la tabla `product`
 --
-ALTER TABLE `proveedor`
-  ADD PRIMARY KEY (`codproveedor`),
-  ADD KEY `usuario_id` (`usuario_id`);
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id_product`);
 
 --
--- Indices de la tabla `rol`
+-- Indices de la tabla `proveedores`
 --
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`idrol`);
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`id_proveedores`);
 
 --
--- Indices de la tabla `usuario`
+-- Indices de la tabla `provider`
 --
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idusuario`),
-  ADD KEY `rol` (`rol`);
+ALTER TABLE `provider`
+  ADD PRIMARY KEY (`id_provider`);
+
+--
+-- Indices de la tabla `type_of_input`
+--
+ALTER TABLE `type_of_input`
+  ADD PRIMARY KEY (`id_type_of_input`);
+
+--
+-- Indices de la tabla `unit_type`
+--
+ALTER TABLE `unit_type`
+  ADD PRIMARY KEY (`id_unit_type`);
+
+--
+-- Indices de la tabla `way_to_pay`
+--
+ALTER TABLE `way_to_pay`
+  ADD PRIMARY KEY (`id_way_to_pay`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `brend`
+--
+ALTER TABLE `brend`
+  MODIFY `id_brend` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `cargo`
@@ -462,138 +503,120 @@ ALTER TABLE `cargo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT de la tabla `input`
 --
-ALTER TABLE `cliente`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `input`
+  MODIFY `id_input` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `detallefactura`
+-- AUTO_INCREMENT de la tabla `inventory`
 --
-ALTER TABLE `detallefactura`
-  MODIFY `correlativo` bigint(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `inventory`
+  MODIFY `id_inventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de la tabla `detalle_temp`
+-- AUTO_INCREMENT de la tabla `inventory_eliminar`
 --
-ALTER TABLE `detalle_temp`
-  MODIFY `correlativo` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `entradas`
---
-ALTER TABLE `entradas`
-  MODIFY `correlativo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT de la tabla `factura`
---
-ALTER TABLE `factura`
-  MODIFY `nofactura` bigint(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `inventory_eliminar`
+  MODIFY `id_inventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `login_eliminar`
+-- AUTO_INCREMENT de la tabla `marca`
 --
-ALTER TABLE `login_eliminar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `marca`
+  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `movement`
+--
+ALTER TABLE `movement`
+  MODIFY `id_movement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `patient_prueba`
 --
 ALTER TABLE `patient_prueba`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_patient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `producto`
+-- AUTO_INCREMENT de la tabla `prodcutos`
 --
-ALTER TABLE `producto`
-  MODIFY `codproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `prodcutos`
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `proveedor`
+-- AUTO_INCREMENT de la tabla `product`
 --
-ALTER TABLE `proveedor`
-  MODIFY `codproveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `product`
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `rol`
+-- AUTO_INCREMENT de la tabla `proveedores`
 --
-ALTER TABLE `rol`
-  MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `proveedores`
+  MODIFY `id_proveedores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT de la tabla `provider`
 --
-ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+ALTER TABLE `provider`
+  MODIFY `id_provider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `type_of_input`
+--
+ALTER TABLE `type_of_input`
+  MODIFY `id_type_of_input` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `unit_type`
+--
+ALTER TABLE `unit_type`
+  MODIFY `id_unit_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `way_to_pay`
+--
+ALTER TABLE `way_to_pay`
+  MODIFY `id_way_to_pay` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `cliente`
+-- Filtros para la tabla `inventory`
 --
-ALTER TABLE `cliente`
-  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`idusuario`);
+ALTER TABLE `inventory`
+  ADD CONSTRAINT `inventory_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_2` FOREIGN KEY (`brend_id`) REFERENCES `brend` (`id_brend`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_3` FOREIGN KEY (`provider_id`) REFERENCES `provider` (`id_provider`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_4` FOREIGN KEY (`type_of_input_id`) REFERENCES `type_of_input` (`id_type_of_input`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_5` FOREIGN KEY (`way_to_pay_id`) REFERENCES `way_to_pay` (`id_way_to_pay`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_6` FOREIGN KEY (`input_id`) REFERENCES `input` (`id_input`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_7` FOREIGN KEY (`unit_type_id`) REFERENCES `unit_type` (`id_unit_type`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_8` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_ibfk_9` FOREIGN KEY (`movement_id`) REFERENCES `movement` (`id_movement`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `detallefactura`
+-- Filtros para la tabla `inventory_eliminar`
 --
-ALTER TABLE `detallefactura`
-  ADD CONSTRAINT `detallefactura_ibfk_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`),
-  ADD CONSTRAINT `detallefactura_ibfk_3` FOREIGN KEY (`nofactura`) REFERENCES `factura` (`nofactura`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `detalle_temp`
---
-ALTER TABLE `detalle_temp`
-  ADD CONSTRAINT `detalle_temp_ibfk_1` FOREIGN KEY (`nofactura`) REFERENCES `factura` (`nofactura`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detalle_temp_ibfk_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `entradas`
---
-ALTER TABLE `entradas`
-  ADD CONSTRAINT `entradas_ibfk_1` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `factura`
---
-ALTER TABLE `factura`
-  ADD CONSTRAINT `factura_ibfk_2` FOREIGN KEY (`codcliente`) REFERENCES `cliente` (`idcliente`),
-  ADD CONSTRAINT `factura_ibfk_3` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `inventory_eliminar`
+  ADD CONSTRAINT `inventory_eliminar_ibfk_1` FOREIGN KEY (`producto_id`) REFERENCES `prodcutos` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_eliminar_ibfk_2` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventory_eliminar_ibfk_3` FOREIGN KEY (`marca_id`) REFERENCES `marca` (`id_marca`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `login`
 --
 ALTER TABLE `login`
   ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`cargo_id`) REFERENCES `cargo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`proveedor`) REFERENCES `proveedor` (`codproveedor`),
-  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `proveedor`
---
-ALTER TABLE `proveedor`
-  ADD CONSTRAINT `proveedor_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `rol` (`idrol`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
