@@ -15,11 +15,6 @@
         //     echo "No existe";
         // }
 
-
-
-
-
-
         $busqueda = $_POST['busqueda'];
         // echo $busqueda;
         $cabecera_tabla = "";
@@ -36,7 +31,7 @@
         //         </tr>
             
         //     </thead>";;
-        echo "<h3>Resultados de la busqueda</h3>";
+        
         echo $cabecera_tabla;
        
         if($_POST['accion'] == "1"){$tabla = $table_patient;}
@@ -45,9 +40,7 @@
         // echo $_POST['accion'] == "1" ? $tabla = $table_patient:  
         //     $_POST['accion'] == "2" ? $tabla = $table_doctor: 
         //     $_POST['accion'] == "3" ? $tabla = $table_inventory:
-        
-        
-        
+
         if($_POST['accion'] == "1"){
             // $tabla = $table_patient;
         $consulta = "SELECT * FROM `$tabla` where `name` LIKE '%$busqueda%'";

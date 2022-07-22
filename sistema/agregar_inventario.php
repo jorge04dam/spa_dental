@@ -1,6 +1,22 @@
+<?php 
+        // inicio el metodo global para iniciar una session
+        session_start();
+        //se verifica que no haya una sesion activa, si hay una, no se permitira el acceso al login
+        //¿no Hay una sesion activa o iniciada?
+       if(empty($_SESSION['active'])){
+           header('location: ../sistema/bienvenida.php');
+       }
+       include '../servidor/connect.php';
+       include '../include/library_css.php';
+    ?> 
 <link rel="stylesheet" href="../pruebas/css/inventory_add.css">
-<?php
-    include '../servidor/connect.php';
+
+<body class="grid-container">
+            <?php 
+                include '../include/header.php';
+                include '../include/sidebar.php';
+
+                include '../servidor/connect.php';
     /*consulta para la tabla productos*/
     $consulta_producto = "SELECT * FROM product";
     mysqli_select_db($conn, $database);
@@ -29,35 +45,31 @@
     /*consulta para la tabla tipo de way_to_pay*/
     $consulta_way_to_pay = "SELECT * FROM way_to_pay";
     $datos_way_to_pay = mysqli_query($conn, $consulta_way_to_pay);
+    ?>
+    
+    <article class="main">
+    <br>
+    <br><br>
+        <form action="../servidor/agregar_insumo.php" method="post" id="inventory_add">
+            <select name="" id="product" placeholder="marca">
+            <?php
+                while($fila = mysqli_fetch_array($datos_producto, MYSQLI_ASSOC)){
+                    //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                    echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
+                }
+            ?>
 
-    // $validar_resultado_producto = mysqli_num_rows($datos_producto);
-    // if(!$validar_resultado_producto > 0){
-    //     echo "la base de datos regreso una respuesta vacía";
-    // }
-
-
-
-?>
-<form action="../servidor/agregar_insumo.php" method="post" id="inventory_add">
-    <select name="" id="product" placeholder="marca">
-        <?php
-            while($fila = mysqli_fetch_array($datos_producto, MYSQLI_ASSOC)){
-                //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
-                echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
-            }
-        ?>
-
-    </select>
-    <select name="" id="unit_type" placeholder="marca">
+        </select>
+        <select name="" id="unit_type" placeholder="marca">
         <?php
             while($fila = mysqli_fetch_array($datos_unit_type, MYSQLI_ASSOC)){
                 //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
                 echo "<option value=".$fila['id_unit_type'].">".$fila['name_unit']."</option>";
             }
         ?>
-    </select>
-    <select name="" id="brend" placeholder="marca">
-    <?php
+        </select>
+        <select name="" id="brend" placeholder="marca">
+        <?php
             while($fila = mysqli_fetch_array($datos_brend, MYSQLI_ASSOC)){
                 //echo "<option value=".$fila['id_product'].">".$fila['name_product']."</option>";
                 echo "<option value=".$fila['id_brend'].">".$fila['name_brend']."</option>";
@@ -106,3 +118,25 @@
     <input type="button" value="Guardar insumo" id="btn_guardar_insumo">
    
 </form>
+<div id="resultado">
+
+</div>
+                </article>
+            <?php    
+                include '../include/footer.php';
+                include '../include/library_js.php';  
+            ?> 
+            
+        </body> 
+
+<?php
+    
+
+    // $validar_resultado_producto = mysqli_num_rows($datos_producto);
+    // if(!$validar_resultado_producto > 0){
+    //     echo "la base de datos regreso una respuesta vacía";
+    // }
+
+
+
+?>

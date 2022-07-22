@@ -11,6 +11,7 @@
     ?> 
        <body class="grid-container">
             <?php 
+            
                 include '../include/header.php';
                 include '../include/sidebar.php';
                 // include '../include/main.php';
